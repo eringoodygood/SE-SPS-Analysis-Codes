@@ -1,0 +1,22 @@
+7.2	    # B field (kG)
+20					# Lab angle of spectrometer
+70	87				# RhoMin	    RhoMax
+150                  # Gas pressure (in torr)
+0                   # Blocker foil thickness (mil)
+Al                  # Blocker material
+0.25                # Mylar Entrance window thickness (mil)
+0.25                   # Mylar Exit window thickness (mil)
+0                   # Alum foil on Scint. thickness (mil)
+2         4	        # Z beam		A beam
+15					# E beam (MeV)
+50	112	2	4	2	# Ztarg   Atarg  Zproj  Aproj Qproj
+50	114	2	4	2
+50	116	2	4	2
+50	118	2	4	2
+50	120	2	4	2
+50	122	2	4	2
+50	124	2	4	2
+6	12	2	4	2
+8	16	2	4	2
+#7	14	2	4	2
+

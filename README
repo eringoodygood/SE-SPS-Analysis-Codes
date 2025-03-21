@@ -1,0 +1,14 @@
+How to run SpecPlot: because you always forget
+
+* open eclipse in the directory ~/Desktop/SPSCode/workspace or wherever you have this folder
+* go to Astro Code SABRE
+* go to dwvisser
+* select correct package from list and launch
+* launch SpecPlot from eclipse
+
+SpecPlot should open. Then do this:
+* File > select input file. This will be in SPSCode/SpecPlot as a *.inp file.
+
+Everything is labeled in the input file except the possible reactions at the end:
+    ZTarg, ATarg, ZProj, AProj, CHargeProj
+	where the projectile is the product into the fp
