@@ -1,0 +1,11 @@
+%Excelsior FlawDetector options
+-analyzerheap=0
+-analysisstrength=1000
++ignorelibraryflaws
+
+%JDK classes and required libraries
+-bootclasspath=C:\j2sdk1.4.2_02\jre\lib\rt.jar;C:\j2sdk1.4.2_02\jre\lib\sunrsasign.jar;C:\j2sdk1.4.2_02\jre\lib\jsse.jar;C:\j2sdk1.4.2_02\jre\lib\jce.jar;C:\j2sdk1.4.2_02\jre\lib\charsets.jar;C:\j2sdk1.4.2_02\jre\lib\ext\dnsns.jar;C:\j2sdk1.4.2_02\jre\lib\ext\jmf.jar;C:\j2sdk1.4.2_02\jre\lib\ext\ldapsec.jar;C:\j2sdk1.4.2_02\jre\lib\ext\localedata.jar;C:\j2sdk1.4.2_02\jre\lib\ext\sound.jar;C:\j2sdk1.4.2_02\jre\lib\ext\sunjce_provider.jar;C:\Documents and Settings\Administrator\My Documents\Java Development\workspace\nukesim-classes\Jam_1_3_2_02.jar;C:\Documents and Settings\Administrator\My Documents\Java Development\workspace\nukesim-classes\jlfgr-1_0.jar;C:\Documents and Settings\Administrator\My Documents\Java Development\workspace\nukesim-classes\jh.jar;C:\Documents and Settings\Administrator\My Documents\Java Development\workspace\nukesim-classes\junit.jar;C:\Documents and Settings\Administrator\My Documents\Java Development\workspace\nukesim-classes\kunststoff.jar;
+
+%Application classes
+-lookup=*.class=C:\Documents and Settings\Administrator\My Documents\Java Development\workspace\nukesim-classes
+!directory *.class "C:\Documents and Settings\Administrator\My Documents\Java Development\workspace\nukesim-classes"

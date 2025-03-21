@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>Entering
+Calibration Peak Information</title>
+</head>
+<body>
+<h3>Entering
+Calibration Peak Information</H3>
+<p>Calibration
+peaks in Spanc are specified by a reaction, a projectile excitation
+energy, a residual excitation energy, and a centroid channel. To add
+a calibration peak, click 'Add Peak' in the 'Calibration Peaks'
+section of the main window. This displays an 'Add Calibration Peak'
+dialog.</P>
+<p>Select
+which reaction the peak belongs to using the 'Reaction' slider.  You
+<B>must</B> do this at least once, even if it appears that your
+desired reaction is already selected.  Enter an excitation energy in
+MeV for the projectile.  A default value of 0 is already present. 
+Projectile excitation energies are assumed to be exact in Spanc at
+the present time.  Enter the residual excitation energy in MeV in the
+'Ex Residual [MeV]' field, and the uncertainty in keV in the 'Ex
+Residual Unc. [keV]' field.  These units were chosen because they are
+the standard units used in the Table of Isotopes. In the next two
+fields, enter the centroid channel for your peak, and its
+uncertainty.</P>
+<p>Clicking
+'OK' or 'Apply' creates the peak, and adds it to the 'Calibration
+Peaks' table in the main window.  &#961;
+is calculated automatically for the peak, along with an uncertainty
+based on entered residual excitation energy. If any reaction
+participant nuclides have been specified as having mass uncertainty
+(see the section on entering reaction information), their mass
+uncertainties are also included in &#961;'s
+uncertainty. Spanc gets its
+nuclear masses from the 2003 atomic mass evaluation
+(as provided by the file <code>mass.mas03</code>
+available at
+<U><A HREF="http://csnwww.in2p3.fr/AMDC/web/amdcw_en.html">http://csnwww.in2p3.fr/AMDC/web/amdcw_en.html</A></U>).</P>
+<p>Spanc
+assumes that the nuclear interaction point in the target is exactly
+halfway through the specified interaction layer.  Beam energy loss is
+calculated up to this point (for normal incidence), and used as the
+beam energy in the 2-body kinematics calculation.  The projectile has
+its energy loss through the remainder of the target.  The projectile
+energy loss uses the exit angle out of the target into the
+spectrometer.  The final projectile energy after exiting the target
+is reflected in the reported &#961;
+value. Energy losses are calculated using the formulas given in
+Ziegler&#185;.</P>
+
+<h2>References</h2>
+<P CLASS="western" STYLE="margin-left: 0.5in; text-indent: -0.5in; margin-bottom: 0in">
+&#185;	J.F. Ziegler H.H. Andersen, The Stopping and Ranges of
+Ions in Matter <B>3</B> (1977); J.F. Ziegler H.H. Andersen, The
+Stopping and Ranges of Ions in Matter <B>5</B> (1977).</P>
+
+</body>
+</html>

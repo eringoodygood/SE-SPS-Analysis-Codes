@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;EngeSABRE_Simulation.java&apos; to &apos;dwvisser.monte.EngeSABRE_Simulation.java&apos;&#x0A;- Original project: &apos;Astro Code SABRE&apos;&#x0A;- Destination element: &apos;dwvisser.monte.EngeSABRE_Simulation.java&apos;&#x0A;- Original element: &apos;dwvisser.monte.EngeSABRE_Simulation.java&apos;" description="Copy compilation unit" destination="/&lt;dwvisser.monte{EngeSABRE_Simulation.java" element1="/&lt;dwvisser.monte{EngeSABRE_Simulation.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1668029973125" units="1" version="1.0"/>
+</session>

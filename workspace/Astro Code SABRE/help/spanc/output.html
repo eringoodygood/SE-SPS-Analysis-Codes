@@ -1,0 +1,73 @@
+<html>
+<head>
+<title>Entering
+Output Peaks</title>
+</head>
+<body>
+<h1>Entering
+Output Peaks</H1>
+<p>Output
+peaks in Spanc are specified by a reaction, a projectile excitation
+energy, and a channel. Output peaks are displayed in the bottom
+section of the main window, and are entered in a very similar fashion
+to the calibration peaks.  Clicking 'Add Peak' in the 'Output Peaks'
+section displays an 'Add Output Peak' dialog.</P>
+<p>Again,
+you <B>must</B>  slide the 'Reaction' slider to the desired reaction
+number, even if it appears to already be selected.  The projectile
+excitation energy is again presumed to be exact and given a default
+value of zero, which you may change. Channel number and uncertainty
+are entered just as with the calibration peaks.</P>
+<p>Clicking
+'OK' or 'Apply' creates the output peak.   If a calibration fit has
+already been performed, the peak is added to the table in the 'Output
+Peaks' section.  In this table, a fitted value for &#961;
+is displayed. The excitation energy for the residual nucleus is
+calculated for this &#961;
+by adding back the energy loss to the interaction point in the
+target, then working the two-body kinematics in reverse. The
+excitation energy error bar is determined from the &#961;,
+which has its error bar calculated as described below.</P>
+<p>Two
+sources of error are added in quadrature: the channel uncertainty in
+the output peak, and the prediction interval one gets assuming the
+output peak channel were known exactly.  The former simply comes from
+multiplying the channel error bar by the slope of the fit function
+evaluated at the channel.  The second is the Prediction Interval,
+calculated by the following formula:</P>
+<p align=center><IMG SRC="SpancManual_html_658bfda0.gif" NAME="Object1" ALIGN=ABSMIDDLE WIDTH=420 HEIGHT=81></P>
+<p align=center>where
+<IMG SRC="SpancManual_html_m3894f3f9.gif" NAME="Object2" ALIGN=ABSMIDDLE WIDTH=93 HEIGHT=44>
+and 
+<IMG SRC="SpancManual_html_7fb4939f.gif" NAME="Object3" ALIGN=ABSMIDDLE WIDTH=199 HEIGHT=77>
+                                   
+</P>
+<p>The
+<IMG SRC="SpancManual_html_m11a2c42.gif" NAME="Object4" ALIGN=ABSMIDDLE WIDTH=48 HEIGHT=25>
+are the same effective y-error bars used to calculate the fit. For a
+t-distribution with r degrees of freedom, the probability for values
+greater than t(&#945;;r) is equal
+to &#945;. This t-distribution is
+the appropriate sampling distribution for the calculated fit values.
+&#945; in the above expression
+for the prediction interval is chosen to be 1-0.683, where 0.683 is
+the probability inside &plusmn;1&#963;
+for the standard normal distribution.</P>
+<p>Notice
+that the Prediction Interval has a parabolic form where the
+prediction uncertainty is lowest at the center of the calibration
+data.</P>
+<H4 CLASS="western">Adjusted Error Bars</H4>
+<p>There is a  checkbox in
+the output peaks section for adjusting error bars.  If this box is
+checked and &#967;&#178;/&#957;
+is greater than 1, the prediction interval error bars get multiplied
+by the square root of &#967;&#178;/&#957;
+ This is to attempt to compensate for a poor quality calibration by
+amplifying the uncertainty.  It is equivalent to assuming that your
+calibration peak error bars were under-estimated by a factor which
+would give the expected value of &#967;&#178;/&#957;=1.
+This is not a statistically justifiable procedure, but it can come in
+handy when one is trying to get a rough calibration of a data set.</P>
+</body>
+</html>

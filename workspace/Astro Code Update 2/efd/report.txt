@@ -1,0 +1,4 @@
+Excelsior FlawDetector Warnings Report
+--------------------------------------------------------------------------------
+No warnings are detected.
+

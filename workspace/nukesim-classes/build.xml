@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+
+<!-- assumes eclipse has already compiled things for us -->
+<!-- purpose is to make proper Jar files for src and bin -->
+<!-- to be processed by Ant -->
+
+<project name="Make release files for nukesim-classes" default="windows" basedir=".">
+
+	<!-- folder with source code and compiled classes together-->
+	<property name="src.dir" value="."/>
+	
+	<!-- temp build directories -->
+	<property name = "build.dir" value = "${user.home}/nukesimbuild"/>
+	<property name = "build.doc" value = "${build.dir}/doc"/>
+	<property name = "build.api" value = "${build.doc}/API"/>
+	<property name = "windows" value = "${build.dir}/windows/nukesim-classes" />
+	<property name = "winbin" value="${windows}/bin" />
+	<property name = "winlib" value="${windows}/lib" />
+	<property name = "linux" value = "${build.dir}/linux/nukesim-classes" />
+	<property name = "linbin" value="${linux}/bin" />
+	<property name = "linlib" value="${linux}/lib" />
+	<property name = "password" value = "bc3pfdp0t"/>
+
+	<!-- task definition for windows executable builder -->
+	<taskdef name="jsmoothgen"
+    	classname="net.charabia.jsmoothgen.ant.JSmoothGen"
+     	classpath="jsmoothgen-ant.jar"/>
+
+	<!-- task definition for izpack jar installer -->
+	<taskdef name="izpack" classpath="${basedir}/lib/compiler.jar"
+         classname="com.izforge.izpack.ant.IzPackTask"/>
+
+	<target name="all" depends="zipdocs,linux,postcleanup" 
+	description="Cleans, then makes Jar files."/>
+
+	<target name="jar" depends = "prepare">
+		<jar jarfile="${winlib}/nukesim.jar"
+			 basedir="${src.dir}"
+			 excludes="**/*.java,**/*.jar,*.xml,**/*.obj,**/*.bak,.project,.classpath,install,install/**/*,efd,efd/**/*,*.jsmooth,*.cfg,*.qsp,useNativeLAF"/>
+		<zip zipfile="${build.dir}/nukesim-src.zip"
+			 basedir="${src.dir}"
+			 excludes="**/*.class,**/*.jar,*.xml,**/*.obj,**/*.bak,.project,.classpath,install,install/*,*.jsmooth,*.cfg,*.qsp,useNativeLAF"/>
+	</target>
+
+	<!-- prepare target makes folders for copying classes and java files to -->
+	<target name="prepare" depends="clean">
+		<mkdir dir="${build.dir}"/>
+		<mkdir dir="${build.doc}"/>
+		<mkdir dir="${build.api}"/>
+		<mkdir dir="${windows}" />
+		<mkdir dir="${winbin}"/>
+		<mkdir dir="${winlib}"/>
+		<mkdir dir="${linux}" />
+		<mkdir dir="${linbin}"/>
+		<mkdir dir="${linlib}"/>
+        <copy todir="${windows}" flatten="true" >
+            <fileset dir = "${src.dir}/net/sourceforge/nukesim"
+                includes="*.png" >
+            </fileset>
+        </copy>
+	</target>
+	
+	<target name="clean" description="Removes all generated files.">
+		<delete dir="${build.dir}"/>
+	</target>
+
+	<target name="zipdocs" depends="javadoc">
+		<zip zipfile="${build.dir}/nukesim-javadoc.zip"
+			basedir="${build.api}" />
+	</target>	
+			
+    <target name="windows" depends="jar,javadoc"
+    description="Make Windows executables to go with that release">
+        <copy todir="${winlib}" file="${src.dir}/jh.jar" />
+		<signjar jar="${winlib}/nukesim.jar" alias="dwvisser" storepass="${password}" keypass="${password}"/>
+		<signjar jar="${winlib}/jh.jar" alias="dwvisser" storepass="${password}" keypass="${password}"/>
+    	<copy todir="${windows}" flatten="true">
+    		<fileset dir="${src.dir}" includes="*.jsmooth" />
+    	</copy>
+    	<copy todir="${windows}">
+    		<fileset dir="${build.dir}" includes="nukesim-src.zip, doc/**/*" />
+    	</copy>
+    	<jsmoothgen project="${windows}/spanc.jsmooth" 
+      		skeletonroot="C:\\Program Files\\JSmooth 0.9.7\\skeletons"/>
+    	<jsmoothgen project="${windows}/jrelkin.jsmooth" 
+      		skeletonroot="C:\\Program Files\\JSmooth 0.9.7\\skeletons"/>
+    	<jsmoothgen project="${windows}/specplot.jsmooth" 
+      		skeletonroot="C:\\Program Files\\JSmooth 0.9.7\\skeletons"/>
+      	<zip zipfile="${build.dir}/nukesim-windows.zip" basedir="${build.dir}/windows"
+      	excludes="**/*.jsmooth,**/*.png" />
+    </target>
+    
+    <target name="linux" depends="windows"
+    description="Make a Linux distribution archive" >
+    	<copy todir="${linlib}">
+    		<fileset dir="${winlib}" includes="*.jar" />
+    	</copy>
+    	<copy todir="${linlib}" file="${src.dir}/kunststoff.jar"/>
+		<signjar jar="${linlib}/kunststoff.jar" alias="dwvisser" storepass="${password}" keypass="${password}"/>
+    </target>
+    
+    <target name="postcleanup" 
+    description="Remove temporary files used during build">
+    	<delete>
+    		<fileset dir="${windows}" includes="*.jsmooth,*.png" />
+    	</delete>
+    </target>
+
+	<target name="javadoc" depends = "prepare">
+		<javadoc destdir="${build.api}"
+			windowtitle="Nukesim-classes Nuclear Physics Codes API">
+			<package name="net.sourceforge.nukesim"/>
+			<package name="net.sourceforge.nukesim.*"/>
+			<sourcepath location="${src.dir}"/>
+			<classpath location="${src.dir}"/>
+			<classpath location="${src.dir}/jh.jar"/>
+			<classpath location="${src.dir}/junit.jar"/>
+			<classpath location="${src.dir}/Jam_1_3_2_02.jar"/>
+		</javadoc>
+	</target>	
+
+		<!-- We call IzPack -->
+	<target name="xplatform" depends="clean,zipdocs" 
+	description="Uses IzPack to make a x-platform installer">
+		<echo message="Makes the installer using IzPack"/>
+		<izpack input="${src.dir}/launcher_iz.xml"
+        	output="${user.home}/launcher_iz.jar"
+        	installerType="standard"
+        	basedir="${build.dir}"
+        	izPackDir="${user.home}/"/>
+    </target>
+</project>

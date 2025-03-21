@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item key="DIALOG_WIDTH" value="292"/>
+		<item key="DIALOG_Y_ORIGIN" value="200"/>
+		<item key="DIALOG_X_ORIGIN" value="951"/>
+		<item key="DIALOG_HEIGHT" value="402"/>
+		<item key="DIALOG_FONT_NAME" value="1|.AppleSystemUIFont|11.0|0|COCOA|1|.AppleSystemUIFont"/>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="wrap" value="true"/>
+		<item key="isRegEx" value="false"/>
+		<item key="casesensitive" value="true"/>
+		<item key="incremental" value="false"/>
+		<item key="wholeword" value="false"/>
+		<item key="selection" value="incidence"/>
+		<list key="findhistory">
+			<item value="incidence"/>
+			<item value="inc"/>
+			<item value="thresh"/>
+			<item value="Al"/>
+			<item value="EnergyLoss"/>
+			<item value="deadLayerLoss"/>
+			<item value="Mdecay"/>
+			<item value="p_lab"/>
+			<item value="Tinit"/>
+			<item value="Tflight"/>
+			<item value="Edep"/>
+			<item value="ExUltimate"/>
+			<item value="excitations.dat"/>
+			<item value="readExcitations"/>
+			<item value="mcSims"/>
+		</list>
+		<list key="replacehistory">
+			<item value="ring"/>
+		</list>
+	</section>
+</section>

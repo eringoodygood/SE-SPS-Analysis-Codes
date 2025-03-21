@@ -1,0 +1,12 @@
+1 # number of files
+5 16 4.0 3.0 # number of detectors, strips per detector, width guess, signif. param.
+D:\RunDat~1\Januar~1\PulserTimeCal_100.hdf #spectrum file
+8 # spectra
+4 2 T_D4_S2 # det, strip, spectrum name
+4 3 T_D4_S3
+4 4 T_D4_S4
+4 5 T_D4_S5
+4 6 T_D4_S6
+4 7 T_D4_S7
+4 14 T_D4_S14
+4 15 T_D4_S15

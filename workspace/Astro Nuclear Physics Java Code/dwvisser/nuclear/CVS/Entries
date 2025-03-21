@@ -1,0 +1,22 @@
+/Absorber.java/1.2/Wed Apr  9 22:24:02 2003/-ko/
+/Beam.java/1.1/Thu Jul 11 21:45:01 2002/-ko/
+/BindingEnergyTable.java/1.5/Thu Jan 23 22:51:41 2003/-ko/
+/Boost.java/1.2/Sat Jan 25 22:04:55 2003/-ko/
+/EnergyLoss.java/1.3/Thu Jan 23 22:52:25 2003/-ko/
+/FocalPlanePlot.java/1.5/Wed Apr  9 22:24:41 2003/-ko/
+/Gas.java/1.2/Wed Apr  9 22:24:54 2003/-ko/
+/KinematicsException.java/1.1/Thu Jul 11 21:45:01 2002/-ko/
+/NuclearException.java/1.1/Thu Jul 11 21:45:01 2002/-ko/
+/Nucleus.java/1.7/Wed Apr  9 22:25:14 2003/-ko/
+/NucleusTest.java/1.1/Wed Apr  9 22:25:39 2003//
+/PIDsimulation.java/1.7/Wed Apr  9 22:26:25 2003/-ko/
+/Particle.java/1.3/Wed Apr  9 22:25:51 2003/-ko/
+/Reaction.java/1.3/Wed Apr  9 22:26:39 2003/-ko/
+/Solid.java/1.2/Wed Apr  9 22:26:54 2003/-ko/
+/atomdata.dat/1.1/Thu Jul 11 21:45:01 2002/-kb/
+/coeffs.dat/1.1/Thu Jul 11 21:45:01 2002/-kb/
+D/graphics////
+/mass_rmd.mas95/1.1/Thu Jul 11 21:45:01 2002/-kb/
+/package.html/1.1/Sun Jan 26 20:42:39 2003/-ko/
+D/swing////
+D/table////

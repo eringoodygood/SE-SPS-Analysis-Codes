@@ -1,0 +1,60 @@
+<html>
+<head>
+<title>Performing a
+Fit</title>
+</head>
+<body>
+<h1>Performing a
+Fit</H1>
+<p>Spanc
+performs linear regressions to fit &#961;
+as a function of channel using polynomial.  The polynomials may be
+1st order thru 4th order.  The dependence fit is as follows:</P>
+<P ALIGN=CENTER>&#961;=
+a0 + a1&#183;(Channel - Channel[0]) + a2&#183;(Channel - Channel[0])&#178; +
+...</P>
+<p>Channel[0]
+is simply the unweighted mean of all the calibration peak channels. 
+It is exact, and not really a parameter of the fit.  Rather, it is a
+constant shift of the data made in order to reduce the covariance
+between the a0 and a1 terms.  (In an unweighted 1st-order linear
+regression, this transformation actually eliminates the covariance.)
+The value of Channel[0] is displayed all the way to the right in the
+'Fit' section..</P>
+<p>To
+perform a fit, simply slide the 'Fit Order' slider to the desired
+order of polynomial you would like to use. Spanc displays the degrees
+of freedom in the 'd.o.f.' box, and requires that there be at least
+one degree of freedom before it will perform a fit.  When performing
+a fit, Spanc first assumes the channels (x-axis) to be exact, and
+performs a weighted fit using the &#961;
+error bars (y-axis).  This is a standard linear regression with error
+bars in the y-axis. It then uses this fit as an approximation to
+determine an effective contribution of the channel error bars in the
+y-axis (fit slope at channel &#183; channel error bar). This gets added in
+quadrature with the given y-error bar to give an effective y-error
+bar. A second fit is performed with these effective y-error bars.</P>
+<p>'&#967;&#178;/&#957;'
+contains the calculated value of the &#967;&#178;
+statistic for the fit, divided by degrees of freedom.  The
+expectation value for the &#967;&#178; distribution is the number of degrees of freedom.  Therefore,
+for good fits, you expect to see a value for '&#967;&#178;/&#957;' near 1. 
+The 'p-value' field contains the tail probability of the &#967;&#178;
+distribution for this fit.  It is the probability that '&#967;&#178;/&#957;'
+would be equal to or greater than the present calculated value if the
+fit does, in fact, represent the true calibration curve. Ideally, it
+should be greater than 0.90 or 0.95, but anything above 0.5 should be
+OK, in my opinion.  The true check of the goodness-of-fit is to take
+a look at the residuals, which are listed in the second table in the
+'Fit' section. The 'Resid./Sigma' column uses the effective y-error
+bars calculated for the fit.  If the fit is good, about 2/3 of the
+values in this column should be less than 1.  One wouldn't expect
+more than about one in twenty values to be greater than 2.</P>
+<p>The
+fitted parameters, along with their associated error bars are listed
+in the first table in the 'Fit' section.  The error bars are simply
+the square of the appropriate diagonal element in the covariance
+matrix. The covariance matrix is displayed to the right in the same
+table.</P>
+</body>
+</html>

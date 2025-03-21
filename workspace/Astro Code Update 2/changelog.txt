@@ -1,0 +1,26 @@
+Changelog for nukesim-classes version 1.1
+
+* Throughout the code:
+    - All source files now include the copyright statement.
+    - Added dwvisser.NukeSimLauncher, a launcher program that
+      allows you to start JRelKin, Spanc, Det or Plot.
+    - System look and feel is now used instead of "Metal".
+    - changes were made to use Java Collections API 
+      interfaces for field types, instead of specific implementation 
+      classes.
+    - Calls to overridable methods were eliminated in constructors.
+* build_dwvisser.xml: Added jar file signing for Java Web Start.
+* New executable: dwvisser.NukeSimLauncher
+* dwvisser.JRelKin: 
+    - Added help menu
+    - Non-zero target thickness now gives projectile energies for 
+      reactions at front and back of target (also changed 
+      KinematicsOuputTableModel, ReactionTableModel and 
+      ReactionTableClient in dwvisser.nuclear.table).
+    - Layout of main window changed to put all input parameters near 
+      the top.
+* dwvisser.nuclear.EnergyLoss
+    - A getAbsorber() method was added to facilitate changes in 
+      JRelKin.
+* dwvisser.nuclear.Solid
+    - Added a static factory method for Kapton foils.

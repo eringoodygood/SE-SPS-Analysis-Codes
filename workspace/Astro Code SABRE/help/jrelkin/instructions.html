@@ -1,0 +1,91 @@
+<html>
+<head>
+<title>JRelKin</title>
+</head>
+<body>
+<h1>JRelKin</h1>
+<p>In this program, the user enters beam, target,
+and projectile nuclei in the table at the top. The residual
+nucleus is determined automatically, and Q0, the ground-state
+Q-value is displayed. If QO is negative, it represents the amount
+of energy needed in the center-of-mass system for this reaction
+to occur.</p>
+
+<p>Single or multiple beam energies, residual excitations, and
+spectrometer angles may be entered. For each, two options are
+given: <em>List of Values</em> or <em>Min Max Delta</em>. For One Value, 
+just
+enter a single value in the text field. For <em>Min Max Delta</em>, enter 
+a minimum
+value, maximum value, and step value separated by spaces. For <em>List of 
+Values</em>, enter as many values as you like, separated by spaces.
+For all entries, hitting enter causes the change, and JRelKin
+automatically recalculates and updates the table. Additionally,
+there is a target thickness field, which will cause the beam
+energy, projectile kinetic energy, and projectile QB&#961; values to
+be modified for energy losses. The target is assumed to be made
+entirely of the same element as the target nuclide.</p>
+
+<p>The column headings in the JRelKin results table are as
+follows:</p>
+
+<dl>
+<dt>T(1)</dt>
+
+<dd>Kinetic energy in MeV of the beam in the lab system. If a
+non-zero target thickness is given, this is the beam energy at
+halfway through the target.</dd>
+
+<dt>Ex(4)</dt>
+
+<dd>Excitation energy of the residual nucleus in MeV.</dd>
+
+<dt>Lab &#952;(3)</dt>
+
+<dd>Angle in degrees of the projectile in the lab system.</dd>
+
+<dt>CM &#952;(3)</dt>
+
+<dd>Angle in degrees of the projectile in the center-of-mass
+system.</dd>
+
+<dt>T(3)</dt>
+
+<dd>Kinetic energy in MeV of the projectile in the lab system. If
+a non-zero target thickness is given, this is the kinetic energy
+after traversing the remainder of the target.</dd>
+
+<dt>Lab &#952;(4)</dt>
+
+<dd>Angle in degrees of the residual in the lab system.</dd>
+
+<dt>T(4)</dt>
+
+<dd>Kinetic energy in MeV of the residual in the lab system.</dd>
+
+<dt>Jac(3)</dt>
+
+<dd>The Jacobian for the projectile for transforming between the
+lab and center-of-mass systems.</dd>
+
+<dt>k(3)</dt>
+
+<dd>Kinematic shift parameter for determining the position of the
+focal plane of the spectrometer. k=1/p * dp/dTheta for the
+projectile.</dd>
+
+<dt>z</dt>
+
+<dd>Only useful at WNSL. Our digital readout for the detector
+position will read this value for the detector sitting properly
+at the focal plane. See the page on SplitPole <a
+href="http://wnsl.physics.yale.edu/astro/enge/setup">setup</a> at WNSL.</dd>
+
+<dt>QB&#961;(3)</dt>
+
+<dd>Magnetic rigidity in e-kG-cm of the projectile in the lab
+system. This value is derived directly from T(3), and so is also
+affected by finite target thickness.</dd>
+</dl>
+</body>
+</html>

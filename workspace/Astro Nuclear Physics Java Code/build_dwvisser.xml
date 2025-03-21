@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+
+<!-- assumes eclipse has already compiled things for us -->
+<!-- purpose is to make proper Jar files for src and bin -->
+<!-- to be processed by Ant -->
+
+<project name="Build dwvisser distribution jars" default="jar" basedir=".">
+
+	<!-- folder with source code and compiled classes together-->
+	<property name="src.dir" value="."/>
+	
+	<!-- temp build directories -->
+	<property name = "build.dir" value = "build"/>
+	<property name = "build.doc" value = "${build.dir}/doc"/>
+	<property name = "build.api" value = "${build.doc}/API"/>
+
+	<!-- prepare target makes folders for copying classes and java files to -->
+	<target name="prepare">
+		<mkdir dir="${build.dir}"/>
+		<mkdir dir="${build.doc}"/>
+		<mkdir dir="${build.api}"/>
+	</target>
+	
+	<target name="clean" description="Removes all generated files.">
+		<delete dir="${build.dir}"/>
+	</target>
+	
+	<target name="jar" depends = "prepare">
+		<jar jarfile="${build.dir}/dwvisser.jar"
+			 basedir="${src.dir}"
+			 excludes="**/*.java,**/*.jar,**/*.xml,**/*.obj,**/*.bak,.project,.classpath,install,install/*"/>
+		<jar jarfile="${build.dir}/dwvisser_src.jar"
+			 basedir="${src.dir}"
+			 excludes="**/*.class,**/*.jar,**/*.xml,**/*.obj,**/*.bak,.project,.classpath,install,install/*"/>
+	</target>
+			
+	<target name="javadoc" depends = "prepare">
+		<javadoc destdir="${build.api}"
+			windowtitle="dwvisser Nuclear Physics Codes API">
+			<package name="dwvisser"/>
+			<package name="dwvisser.*"/>
+			<sourcepath location="${src.dir}"/>
+			<classpath location="${src.dir}"/>
+		</javadoc>
+	</target>
+	
+
+	<target name="all" depends="clean,jar,javadoc" description="Cleans, then makes Jar files."/>
+
+
+</project>

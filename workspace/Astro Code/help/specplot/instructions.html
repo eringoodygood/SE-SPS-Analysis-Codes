@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>SpecPlot Instructions
+</head>
+<body>
+<h1>SpecPlot Instructions</h1>
+<p>This code will plot position spectra on the focal plane
+detector for multiple reaction channels. You must specify an input file 
+by selecting <code>File|Open...</code>. A sample input file is
+here: <a href="35MeV_10B_t.inp"><code>35MeV_10B_t.inp</code></a>.</p>
+
+<dl>
+<dt>Note:</dt>
+<dd>Many of the fields in the input file are leftover from the
+Particle ID simulation code, <code>PIDplotYaleOld</code>. While the values
+specifying absorbers must be present for the input file to be parsed, they
+are ignored in the calculations of projectile radii.</dd>
+</dl>
+
+<p>Excitation energies for the residual nucleus are automatically
+loaded from a file called <code><a
+href="excitations.dat">excitations.dat</a></code>, which must be
+in the same directory as the input file. You may modify the files
+given here as needed. The format should be self-explanatory. You
+may specify as many reaction channels as you wish at the end of
+the <code>.inp</code> file.</p>
+</body>
+</html>

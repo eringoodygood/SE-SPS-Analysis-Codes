@@ -1,0 +1,1 @@
+100 # Energy threshold in keV

@@ -1,0 +1,63 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <TITLE>Customizing JamConfig.ini</TITLE>
+   <LINK REL=STYLESHEET TYPE="text/css" HREF="../manualstyle.css" TITLE="Manual Style">
+</HEAD>
+<BODY>
+ 
+<h2>Example JamConfig.ini file</h2>
+
+<blockquote><code><pre>
+!Configuration file for Jam on meitner.physics.yale.edu
+host.IP=meitner
+host.portSend=5003
+host.portRecv=5002
+target.IP=calvin
+target.port=5002
+host-data.IP=meitner-data
+host-data.portRecv=10205
+event.instream=jam.sort.stream.YaleCAEN_InputStream
+event.outstream=jam.sort.stream.YaleOutputStream
+</pre></code>
+</blockquote>
+
+<h3>Parameter definitions</h3>
+<p>In the following, the host is the computer Jam runs on, while the target is the computer in the VME crate.</p>
+
+<DL>
+<DT> 
+host.IP
+<DD>
+IP address of the socket to used to communicate with the VME crate
+<DT> 
+host.portSend
+<DD>
+socket send port number used to communicate with the VME crate
+<DT>
+host.portRecv
+<DD>
+socket receive port number used to communicate with the VME crate
+<DT>
+target.IP
+<DD>
+IP address of the socket on the VME computer that is used to communicate with the host
+<DT>
+target.port
+<DD>
+socket receive port number on the VME computer that is used to communicate with the host
+<DT>
+host-data.IP
+<DD>
+IP address of the socket to used to receive data from VME crate
+<DT>
+host-data.portRecv 
+<DD>
+socket receive port number used to receive data from the VME crate
+    <dt>event.instream</dt>
+        <dd>Java reference to the class which handles reading incoming data</dd>
+    <dt>event.outstream</dt>
+        <dd>Java reference to the class which handles reading writing out pre-sorted data</dd>     
+</dl>
+</body>
+</html>

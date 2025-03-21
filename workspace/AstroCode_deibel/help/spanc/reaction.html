@@ -1,0 +1,44 @@
+<head>
+<title>Entering
+Reaction Information</title>
+</head>
+<body>
+<h1>Entering
+Reaction Information</H1>
+<p>A
+reaction in Spanc is specified by a beam nuclide, beam energy,
+spectrometer B-field, target, interaction layer, target nuclide,
+projectile nuclide, projectile charge state, and spectrometer angle. 
+All this information may be entered for a new reaction by clicking
+'Add Reaction' in the 'Calibration Reactions' section of the main
+window.  This displays an 'Add Reaction' dialog.</P>
+<p>The
+'Beam' and 'Projectile' fields are for specifying the nuclides.  In
+them, you must enter the nuclide in the form AAAZZZ, where AA is the
+mass number of the nucleus, and ZZZ is the element symbol.  For
+example, silicon-29 would be entered as &quot;29Si&quot;.  The beam
+energy is entered in MeV, and the B-field is entered in kG.  The
+target is specified by choosing one of your entered targets from a
+dropdown list.  The layer that your reaction is assumed to occur in
+must then be selected from the 'Layer' slider.  'Target Nuclide' is a
+drop-down list containing all known isotopes of elements in your
+chosen target layer. Select the desired isotope. Q is an integer
+representing the charge state of your projectile.  Finally, the angle
+of the spectrometer must be entered in degrees.</P>
+<p>For
+every nuclide participating in the reaction, it is possible to
+specify the mass as having uncertainty.  When calibrating an
+experiment internally, i.e. using well known calibration peaks from
+the same reaction as the output peaks, the masses can be treated as
+exact.  However, when different reaction channels are used for
+calibrating, any different reactants and products should have their
+mass uncertainties counted.</P>
+<p>Clicking
+'OK' or 'Apply' creates the reaction, and adds it to the 'Calibration
+Reactions' table in the main window.  Each reaction has a number
+associated with it in the 'Reaction' column, which you will use when
+specifying calibration peaks and output peaks. Selecting a row in the
+reaction table, and clicking 'Remove Reaction' will delete a reaction
+from the list.</P>
+</body>
+</html>

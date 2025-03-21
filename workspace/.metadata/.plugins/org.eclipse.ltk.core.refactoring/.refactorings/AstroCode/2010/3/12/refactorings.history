@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 1 elements(s) to &apos;Astro Code/cmdeibel.monte&apos;&#x0A;- Original project: &apos;AstroCode&apos;&#x0A;- Destination element: &apos;Astro Code/cmdeibel.monte&apos;&#x0A;- Original element: &apos;dwvisser.monte.EngePlusSilicon_Simulation_ANL.java&apos;" description="Copy compilation unit" destination="=Astro Code/&lt;cmdeibel.monte" element1="/&lt;dwvisser.monte{EngePlusSilicon_Simulation_ANL.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1268844585556" units="1" version="1.0"/>
+</session>

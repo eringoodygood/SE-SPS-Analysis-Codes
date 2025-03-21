@@ -1,0 +1,167 @@
+
+An unexpected exception has been detected in native code outside the VM.
+Unexpected Signal : EXCEPTION_ACCESS_VIOLATION (0xc0000005) occurred at PC=0x7C911F52
+Function=[Unknown.]
+Library=C:\WINDOWS\system32\ntdll.dll
+
+NOTE: We are unable to locate the function name symbol for the error
+      just occurred. Please refer to release documentation for possible
+      reason and solutions.
+
+
+Current Java thread:
+	at sun.awt.shell.Win32ShellFolder2.getNextChild(Native Method)
+	at sun.awt.shell.Win32ShellFolder2.listFiles(Unknown Source)
+	at sun.awt.shell.ShellFolder.listFiles(Unknown Source)
+	at sun.awt.shell.Win32ShellFolderManager2.get(Unknown Source)
+	at sun.awt.shell.ShellFolder.get(Unknown Source)
+	at com.sun.java.swing.plaf.windows.WindowsFileChooserUI$DirectoryComboBoxModel.addItem(Unknown Source)
+	at com.sun.java.swing.plaf.windows.WindowsFileChooserUI$DirectoryComboBoxModel.access$2800(Unknown Source)
+	at com.sun.java.swing.plaf.windows.WindowsFileChooserUI.doDirectoryChanged(Unknown Source)
+	at com.sun.java.swing.plaf.windows.WindowsFileChooserUI.access$3100(Unknown Source)
+	at com.sun.java.swing.plaf.windows.WindowsFileChooserUI$15.propertyChange(Unknown Source)
+	at javax.swing.event.SwingPropertyChangeSupport.firePropertyChange(Unknown Source)
+	at javax.swing.event.SwingPropertyChangeSupport.firePropertyChange(Unknown Source)
+	at javax.swing.JComponent.firePropertyChange(Unknown Source)
+	at javax.swing.JFileChooser.setCurrentDirectory(Unknown Source)
+	at javax.swing.JFileChooser.changeToParentDirectory(Unknown Source)
+	at javax.swing.plaf.basic.BasicFileChooserUI$ChangeToParentDirectoryAction.actionPerformed(Unknown Source)
+	at javax.swing.AbstractButton.fireActionPerformed(Unknown Source)
+	at javax.swing.AbstractButton$ForwardActionEvents.actionPerformed(Unknown Source)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(Unknown Source)
+	at javax.swing.DefaultButtonModel.setPressed(Unknown Source)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(Unknown Source)
+	at java.awt.AWTEventMulticaster.mouseReleased(Unknown Source)
+	at java.awt.Component.processMouseEvent(Unknown Source)
+	at java.awt.Component.processEvent(Unknown Source)
+	at java.awt.Container.processEvent(Unknown Source)
+	at java.awt.Component.dispatchEventImpl(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.processMouseEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.dispatchEvent(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Window.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at java.awt.EventDispatchThread.pumpOneEventForHierarchy(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+	at java.awt.Dialog$1.run(Unknown Source)
+	at java.awt.Dialog.show(Unknown Source)
+	at javax.swing.JFileChooser.showDialog(Unknown Source)
+	at javax.swing.JFileChooser.showOpenDialog(Unknown Source)
+	at jam.io.hdf.HDFIO.readFile(HDFIO.java:342)
+	at jam.commands.ReloadHDFCmd.execute(ReloadHDFCmd.java:35)
+	at jam.commands.AbstractCommand.performCommand(AbstractCommand.java:59)
+	at jam.commands.AbstractCommand.actionPerformed(AbstractCommand.java:45)
+	at javax.swing.AbstractButton.fireActionPerformed(Unknown Source)
+	at javax.swing.AbstractButton$ForwardActionEvents.actionPerformed(Unknown Source)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(Unknown Source)
+	at javax.swing.DefaultButtonModel.setPressed(Unknown Source)
+	at javax.swing.AbstractButton.doClick(Unknown Source)
+	at javax.swing.plaf.basic.BasicMenuItemUI.doClick(Unknown Source)
+	at javax.swing.plaf.basic.BasicMenuItemUI$MouseInputHandler.mouseReleased(Unknown Source)
+	at java.awt.Component.processMouseEvent(Unknown Source)
+	at java.awt.Component.processEvent(Unknown Source)
+	at java.awt.Container.processEvent(Unknown Source)
+	at java.awt.Component.dispatchEventImpl(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.processMouseEvent(Unknown Source)
+	at java.awt.LightweightDispatcher.dispatchEvent(Unknown Source)
+	at java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.awt.Window.dispatchEventImpl(Unknown Source)
+	at java.awt.Component.dispatchEvent(Unknown Source)
+	at java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at java.awt.EventDispatchThread.pumpOneEventForHierarchy(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.run(Unknown Source)
+
+Dynamic libraries:
+0x00400000 - 0x00407000 	C:\Program Files\Java\j2re1.4.2_03\bin\javaw.exe
+0x7C900000 - 0x7C9B0000 	C:\WINDOWS\system32\ntdll.dll
+0x7C800000 - 0x7C8F4000 	C:\WINDOWS\system32\kernel32.dll
+0x77DD0000 - 0x77E6B000 	C:\WINDOWS\system32\ADVAPI32.dll
+0x77E70000 - 0x77F01000 	C:\WINDOWS\system32\RPCRT4.dll
+0x77D40000 - 0x77DD0000 	C:\WINDOWS\system32\USER32.dll
+0x77F10000 - 0x77F57000 	C:\WINDOWS\system32\GDI32.dll
+0x77C10000 - 0x77C68000 	C:\WINDOWS\system32\MSVCRT.dll
+0x08000000 - 0x08138000 	C:\Program Files\Java\j2re1.4.2_03\bin\client\jvm.dll
+0x76B40000 - 0x76B6D000 	C:\WINDOWS\system32\WINMM.dll
+0x10000000 - 0x10007000 	C:\Program Files\Java\j2re1.4.2_03\bin\hpi.dll
+0x00830000 - 0x0083E000 	C:\Program Files\Java\j2re1.4.2_03\bin\verify.dll
+0x00840000 - 0x00859000 	C:\Program Files\Java\j2re1.4.2_03\bin\java.dll
+0x00860000 - 0x0086D000 	C:\Program Files\Java\j2re1.4.2_03\bin\zip.dll
+0x02C50000 - 0x02D5F000 	C:\Program Files\Java\j2re1.4.2_03\bin\awt.dll
+0x73000000 - 0x73026000 	C:\WINDOWS\system32\WINSPOOL.DRV
+0x76390000 - 0x763AD000 	C:\WINDOWS\system32\IMM32.dll
+0x774E0000 - 0x7761D000 	C:\WINDOWS\system32\ole32.dll
+0x5AD70000 - 0x5ADA8000 	C:\WINDOWS\system32\uxtheme.dll
+0x02DC0000 - 0x02E10000 	C:\Program Files\Java\j2re1.4.2_03\bin\fontmanager.dll
+0x73760000 - 0x737A9000 	C:\WINDOWS\system32\ddraw.dll
+0x73BC0000 - 0x73BC6000 	C:\WINDOWS\system32\DCIMAN32.dll
+0x73940000 - 0x73A10000 	C:\WINDOWS\system32\D3DIM700.DLL
+0x050A0000 - 0x050B7000 	C:\PROGRA~1\McAfee\SPAMKI~1\mskoeplg.dll
+0x77120000 - 0x771AC000 	C:\WINDOWS\system32\OLEAUT32.dll
+0x77C00000 - 0x77C08000 	C:\WINDOWS\system32\VERSION.dll
+0x5D090000 - 0x5D12A000 	C:\WINDOWS\system32\COMCTL32.dll
+0x671E0000 - 0x671ED000 	C:\Program Files\Support.com\bin\sdchook.dll
+0x05280000 - 0x0567F000 	C:\WINDOWS\resources\Themes\luna\luna.msstyles
+0x05700000 - 0x05719000 	c:\progra~1\mcafee.com\vso\McVSSkt.dll
+0x71AB0000 - 0x71AC7000 	C:\WINDOWS\system32\WS2_32.dll
+0x71AA0000 - 0x71AA8000 	C:\WINDOWS\system32\WS2HELP.dll
+0x763B0000 - 0x763F9000 	C:\WINDOWS\system32\COMDLG32.DLL
+0x77F60000 - 0x77FD6000 	C:\WINDOWS\system32\SHLWAPI.dll
+0x7C9C0000 - 0x7D1D5000 	C:\WINDOWS\system32\SHELL32.dll
+0x773D0000 - 0x774D3000 	C:\WINDOWS\WinSxS\x86_Microsoft.Windows.Common-Controls_6595b64144ccf1df_6.0.2600.2982_x-ww_ac3f9c03\comctl32.dll
+0x68D00000 - 0x68D29000 	C:\WINDOWS\System32\spool\DRIVERS\W32X86\3\FXSUI.DLL
+0x71550000 - 0x7156F000 	C:\WINDOWS\system32\ACLUI.dll
+0x5B860000 - 0x5B8B4000 	C:\WINDOWS\system32\NETAPI32.dll
+0x5A980000 - 0x5A9F2000 	C:\WINDOWS\System32\spool\DRIVERS\W32X86\3\FXSAPI.dll
+0x68EB0000 - 0x68EB6000 	C:\WINDOWS\System32\spool\DRIVERS\W32X86\3\FXSRES.dll
+0x5A8B0000 - 0x5A8E2000 	C:\WINDOWS\System32\spool\DRIVERS\W32X86\3\FXSWZRD.dll
+0x76080000 - 0x760E5000 	C:\WINDOWS\system32\MSVCP60.dll
+0x76EB0000 - 0x76EDF000 	C:\WINDOWS\system32\TAPI32.dll
+0x76E80000 - 0x76E8E000 	C:\WINDOWS\system32\rtutils.dll
+0x68D30000 - 0x68D94000 	C:\WINDOWS\System32\spool\DRIVERS\W32X86\3\FXSTIFF.dll
+0x68F40000 - 0x68F4A000 	C:\WINDOWS\System32\spool\DRIVERS\W32X86\3\FXSDRV.DLL
+0x71B20000 - 0x71B32000 	C:\WINDOWS\system32\MPR.dll
+0x75F60000 - 0x75F67000 	C:\WINDOWS\System32\drprov.dll
+0x71C10000 - 0x71C1E000 	C:\WINDOWS\System32\ntlanman.dll
+0x71CD0000 - 0x71CE7000 	C:\WINDOWS\System32\NETUI0.dll
+0x71C90000 - 0x71CD0000 	C:\WINDOWS\System32\NETUI1.dll
+0x71C80000 - 0x71C87000 	C:\WINDOWS\System32\NETRAP.dll
+0x71BF0000 - 0x71C03000 	C:\WINDOWS\System32\SAMLIB.dll
+0x75F70000 - 0x75F79000 	C:\WINDOWS\System32\davclnt.dll
+0x77920000 - 0x77A13000 	C:\WINDOWS\system32\SETUPAPI.dll
+0x77B40000 - 0x77B62000 	C:\WINDOWS\system32\appHelp.dll
+0x76FD0000 - 0x7704F000 	C:\WINDOWS\system32\CLBCATQ.DLL
+0x77050000 - 0x77115000 	C:\WINDOWS\system32\COMRes.dll
+0x769C0000 - 0x76A73000 	C:\WINDOWS\system32\USERENV.dll
+0x76C90000 - 0x76CB8000 	C:\WINDOWS\system32\imagehlp.dll
+0x59A60000 - 0x59B01000 	C:\WINDOWS\system32\DBGHELP.dll
+0x76BF0000 - 0x76BFB000 	C:\WINDOWS\system32\PSAPI.DLL
+
+Heap at VM Abort:
+Heap
+ def new generation   total 4352K, used 1152K [0x10010000, 0x104c0000, 0x104f0000)
+  eden space 3904K,  24% used [0x10010000, 0x100ff848, 0x103e0000)
+  from space 448K,  43% used [0x103e0000, 0x104107f8, 0x10450000)
+  to   space 448K,   0% used [0x10450000, 0x10450000, 0x104c0000)
+ tenured generation   total 56868K, used 34119K [0x104f0000, 0x13c79000, 0x14010000)
+   the space 56868K,  59% used [0x104f0000, 0x12641cc0, 0x12641e00, 0x13c79000)
+ compacting perm gen  total 10240K, used 10160K [0x14010000, 0x14a10000, 0x18010000)
+   the space 10240K,  99% used [0x14010000, 0x149fc2c0, 0x149fc400, 0x14a10000)
+
+Local Time = Tue Oct 31 13:29:33 2006
+Elapsed Time = 492726
+#
+# The exception above was detected in native code outside the VM
+#
+# Java VM: Java HotSpot(TM) Client VM (1.4.2_03-b02 mixed mode)
+#

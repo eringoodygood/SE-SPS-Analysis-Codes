@@ -1,0 +1,168 @@
+/***************************************************************
+ * Nuclear Simulation Java Class Libraries
+ * Copyright (C) 2003 Yale University
+ * 
+ * Original Developer
+ *     Dale Visser (dale@visser.name)
+ * 
+ * OSI Certified Open Source Software
+ * 
+ * This program is free software; you can redistribute it and/or 
+ * modify it under the terms of the University of Illinois/NCSA 
+ * Open Source License.
+ * 
+ * This program is distributed in the hope that it will be 
+ * useful, but without any warranty; without even the implied 
+ * warranty of merchantability or fitness for a particular 
+ * purpose. See the University of Illinois/NCSA Open Source 
+ * License for more details.
+ * 
+ * You should have received a copy of the University of 
+ * Illinois/NCSA Open Source License along with this program; if 
+ * not, see http://www.opensource.org/
+ **************************************************************/
+package net.sourceforge.nukesim.analysis.spanc;
+import jade.physics.Energy;
+import jade.physics.Quantity;
+
+import java.awt.BorderLayout;
+import java.awt.Container;
+import java.awt.GridLayout;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JSlider;
+import javax.swing.JTextField;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+
+import net.sourceforge.nukesim.Spanc;
+import net.sourceforge.nukesim.analysis.spanc.tables.OutputPeakTable;
+import net.sourceforge.nukesim.math.QuantityUtilities;
+import net.sourceforge.nukesim.math.UncertainNumber;
+import net.sourceforge.nukesim.nuclear.KinematicsException;
+import net.sourceforge.nukesim.nuclear.NuclearException;
+import net.sourceforge.nukesim.nuclear.NukeUnits;
+
+/**
+ *
+ * @author  Dale Visser
+ * @version 1.2
+ * @since 1.0 (17 Dec 2001)
+ */
+public class ChangeOutputPeakDialog
+	extends JDialog
+	implements ActionListener, ChangeListener, NukeUnits {
+
+	static final String TITLE = "Change Output Peak";
+	private final OutputPeakTable opTable;
+	private final Spanc spanc;
+	private final OutputPeak op;
+	private final JSlider _reaction =
+		new JSlider(0, SpancReaction.getAllReactions().length - 1, JSlider.HORIZONTAL);
+	private final JTextField _exproj = new JTextField(8);
+	private final JTextField _channel = new JTextField(8);
+	private final JTextField _delCh = new JTextField(8);
+	private final JButton b_ok = new JButton("OK");
+	private final JButton b_cancel = new JButton("Cancel");
+
+	/** Creates new Change Output Peak Dialog */
+	public ChangeOutputPeakDialog(OutputPeakTable opt, Spanc sp) {
+		super();
+		opTable = opt;
+		spanc = sp;
+		setTitle(TITLE);
+		op = OutputPeak.getPeak(opTable.getSelectedRow());
+		buildGUI();
+	}
+
+	private void buildGUI() {
+		Container contents = getContentPane();
+		contents.setLayout(new BorderLayout());
+		JPanel center = new JPanel(new GridLayout(0, 2));
+		center.add(new JLabel("Reaction"));
+		center.add(_reaction);
+		setupReactionSlider();
+		_reaction.setValue(op.getReactionIndex());
+		_reaction.addChangeListener(this);
+		center.add(new JLabel("Ex Projectile [keV]"));
+		center.add(_exproj);
+		_exproj.setText(QuantityUtilities.noUnits(op.getExProjectile(),keV));
+		center.add(new JLabel("Channel"));
+		center.add(_channel);
+		center.add(new JLabel("delCh"));
+		center.add(_delCh);
+		_channel.setText(Double.toString(op.getChannel().value));
+		_delCh.setText(Double.toString(op.getChannel().error));
+		contents.add(center, BorderLayout.CENTER);
+		JPanel south = new JPanel(new GridLayout(1, 3));
+		south.add(b_ok);
+		b_ok.setEnabled(false);
+		b_ok.addActionListener(this);
+		south.add(b_cancel);
+		b_cancel.addActionListener(this);
+		contents.add(south, BorderLayout.SOUTH);
+		pack();
+		show();
+	}
+
+	private void setupReactionSlider() {
+		_reaction.setMinorTickSpacing(1);
+		_reaction.setMajorTickSpacing(1);
+		_reaction.setPaintTicks(true);
+		_reaction.setPaintLabels(true);
+		_reaction.setSnapToTicks(true);
+		_reaction.addChangeListener(this);
+		_reaction.setValue(0);
+	}
+
+	SpancReaction reaction;
+	public void stateChanged(ChangeEvent change) {
+		Object source = change.getSource();
+		if (source == _reaction) {
+			reaction =
+				(SpancReaction) SpancReaction.getReaction(_reaction.getModel().getValue());
+			b_ok.setEnabled(true);
+			//b_apply.setEnabled(true);
+		}
+	}
+
+	public void actionPerformed(java.awt.event.ActionEvent actionEvent) {
+		Object source = actionEvent.getSource();
+		if (source == b_ok) {
+			modifyPeak();
+			opTable.refreshData();
+			spanc.setButtonStates();
+			dispose();
+		} else if (source == b_cancel) {
+				dispose();
+		}
+	}
+
+	/**
+	 * Modifies peak
+	 */
+
+	private void modifyPeak() {
+        double exproj = Double.parseDouble(_exproj.getText().trim());
+        double channel = Double.parseDouble(_channel.getText().trim());
+        double delch = Double.parseDouble(_delCh.getText().trim());
+		try{
+			op.setValues(
+				reaction,
+				Energy.energyOf(Quantity.valueOf(exproj,keV)),
+				new UncertainNumber(channel, delch));
+		} catch (KinematicsException ke) {
+			System.out.println("Problem modifying output peak: " + ke);
+		} catch (net.sourceforge.nukesim.statistics.StatisticsException se) {
+			System.out.println("Problem modifying output peak: " + se);
+		} catch (net.sourceforge.nukesim.math.MathException me) {
+			System.out.println("Problem modifying output peak: " + me);
+		} catch (NuclearException me) {
+			System.out.println("Problem modifying output peak: " + me);
+		}
+	}
+}

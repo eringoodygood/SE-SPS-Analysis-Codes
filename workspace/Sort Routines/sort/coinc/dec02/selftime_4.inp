@@ -1,0 +1,17 @@
+1 # number of files
+5 16 96.0 3.0 # number of detectors, strips per detector, width guess, signif. param.
+/home/astro/timecal.hdf #spectrum file
+13 # spectra
+0 12 T_D0_S12
+2 5 T_D2_S5
+2 7 T_D2_S7
+2 8 T_D2_S8
+2 9 T_D2_S9
+2 10 T_D2_S10
+2 11 T_D2_S11
+2 12 T_D2_S12
+2 13 T_D2_S13
+2 14 T_D2_S14
+2 15 T_D2_S15
+4 8 T_D4_S3
+4 9 T_D4_S4

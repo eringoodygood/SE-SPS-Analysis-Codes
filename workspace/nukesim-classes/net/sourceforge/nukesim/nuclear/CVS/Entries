@@ -1,0 +1,27 @@
+/Absorber.java/1.4/Sun Aug 22 21:37:44 2004//
+/Boost.java/1.3/Sun Aug 22 21:37:44 2004//
+/EnergyLoss.java/1.7/Tue Aug 24 17:48:33 2004//
+/EnergyLossData.java/1.5/Sun Aug 22 21:37:44 2004//
+/EnergyLossDataTest.java/1.4/Tue Aug 24 17:48:33 2004//
+/Gas.java/1.4/Sun Aug 22 21:37:44 2004//
+/KinematicsException.java/1.1/Mon Mar 22 20:16:10 2004//
+/MassExcessTable.java/1.3/Sun Aug 22 21:37:44 2004//
+/NuclearException.java/1.1/Mon Mar 22 20:16:10 2004//
+/Nucleus.java/1.4/Sun Aug 22 21:37:44 2004//
+/NucleusTest.java/1.3/Sun Aug 22 21:37:44 2004//
+/NukeUnits.java/1.4/Sun Aug 22 21:37:44 2004//
+/Particle.java/1.3/Sun Aug 22 21:37:44 2004//
+/Reaction.java/1.4/Sun Aug 22 21:37:44 2004//
+/Rutherford.java/1.3/Sun Aug 22 21:37:44 2004//
+/RutherfordTest.java/1.3/Sun Aug 22 21:37:44 2004//
+/Solid.java/1.5/Tue Aug 24 17:44:11 2004//
+/SolidTest.java/1.2/Sun Aug 22 21:37:44 2004//
+/TableText.java/1.1/Mon Mar 22 20:16:10 2004//
+/atomdata.dat/1.1/Mon Mar 22 20:16:10 2004/-kb/
+/coeffs.dat/1.2/Wed Apr 21 18:38:37 2004/-kb/
+D/graphics////
+/mass.mas03/1.1/Mon Mar 22 20:16:10 2004/-kb/
+/mass_rmd.mas95/1.1/Mon Mar 22 20:16:10 2004/-kb/
+/package.html/1.1/Mon Mar 22 20:16:10 2004//
+D/swing////
+D/table////

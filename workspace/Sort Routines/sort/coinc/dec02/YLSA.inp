@@ -1,0 +1,23 @@
+#Input file for YLSAcalibration
+#THORIUM
+#    "home/astro/calibration/Th228.inp" # input specification file
+#    "home/astro/calibration/Th228peaks.out" # text file containing found peaks
+#    "home/astro/calibration/Th228fits.out" # text file containing energy gains
+SELFTIME
+    /home/astro/calibration/selftime_1.inp # input specification file
+    4 # number of time peaks
+    -75 -35 -15 0 #times in nsec
+SELFTIME
+    /home/astro/calibration/selftime_2.inp # input specification file
+    4 # number of time peaks
+    -75 -35 -15 0 #times in nsec
+SELFTIME
+    /home/astro/calibration/selftime_3.inp # input specification file
+    4 # number of time peaks
+    -75 -35 -15 0 #times in nsec
+SELFTIME
+    /home/astro/calibration/selftime_4.inp # input specification file
+    4 # number of time peaks
+    -75 -35 -15 0 #times in nsec
+OUTPUTCAL
+    /home/astro/calibration/cal.out # text file showing offsets and gain factors and actual gains

@@ -1,0 +1,1048 @@
+/***************************************************************
+ * Nuclear Simulation Java Class Libraries
+ * Copyright (C) 2003 Yale University
+ * 
+ * Original Developer
+ *     Dale Visser (dale@visser.name)
+ * 
+ * OSI Certified Open Source Software
+ * 
+ * This program is free software; you can redistribute it and/or 
+ * modify it under the terms of the University of Illinois/NCSA 
+ * Open Source License.
+ * 
+ * This program is distributed in the hope that it will be 
+ * useful, but without any warranty; without even the implied 
+ * warranty of merchantability or fitness for a particular 
+ * purpose. See the University of Illinois/NCSA Open Source 
+ * License for more details.
+ * 
+ * You should have received a copy of the University of 
+ * Illinois/NCSA Open Source License along with this program; if 
+ * not, see http://www.opensource.org/
+ **************************************************************/
+/*
+ Matrix.java
+
+ Author:
+ Bryan Lewis, Kent State (blewis@mcs.kent.edu)
+
+ Description:
+ Matrix is a generic  set of linear algebra algorithms.It can accept a 
+ string argument and return a rectangular matrix array of double precision
+ numbers, along with the row and column sizes.
+ It can also generate certain special matrices, and perform basic
+ matrix operations.
+
+ This software is public domain and can be used, modified and distributed freely.
+
+ Note that "Matrix" represents an arbitrary array class including row and
+ column vectors.
+
+ Dependencies:
+ java.util.Vector, java.lang.Math
+
+ Changes:
+ 25-Jun-98 :	added rowMultuply...Dale William Visser @ Yale University
+ 27-Feb-97:	added Householder-QR factorization method Q()
+ 25-Feb-97:	added the transpose method transpose()
+ 27-Feb-97:	added the default norm() method
+ 3-March-97:	added the permutation method permute()
+ 5-March-97:	added *crude* LR and QR eigenvalue methods.
+ 9-March-97:	added the toHess function to transform a matrix to Hessenberg form
+ 25-April-97:	added quicksort
+ 26-April-97:	added average and rank
+ 11-June-97:	added submatrix selection method
+ 21-July, 97:	modified QR decomposition (minor improvement)
+ 21-July, 97:	added QR method that returns 'em both in a vector
+ 21-July, 97:	added backsolve contructor method A\v
+ 15-August, 97:	added a sum of squares function for statistical applications
+ 18-March, 98:	added a method (leig) to *estimate* the largest eigenvalue of 
+		a matrix that has positive entries
+ **** The following are in-process currently ****
+ 30-March, 98:	modified the '\' operation to solve a general dense linear system.
+ 30-March, 98:	added a backsolve method to solve an upper triangular system
+ 30-March, 98:	added a forwardsolve method to solve a lower triangular system
+ 30-March, 98:  modified QR for non-square matrices
+
+Still to do:
+incorporate complex numbers
+add an 'append' method
+better eigenvalue methods
+--------------------------------------------------------------------------------
+
+ Constructor Methods:
+ x = Matrix(int r, int c);		new r by c zero matrix
+ x = Matrix(double d);			new 1x1 matrix with value d (i.e., a scalar)
+ x = Matrix(int r, int c, double z);	new r by c matrix with entries all = z
+ x = Matrix(String s);			new matrix with entries parsed from string s
+ 		The string format can be like Matlab or typical delimited ascii data.
+ x = Matrix(Matrix M);			return a copy of matrix M
+ x = Matrix(r, c, char code); new r by c special matrix:
+ 		code = 'I' or 'i' identity matrix
+ 		code = 'h' or 'H' Hilbert matrix
+		code = 'r' or 'R' Uniform random entries in [0,1]
+ x = Matrix(Matrix A, Matrix B, char operation); perform an operation on A & B
+ 		operation = '+' -> return a new matrix equal to A + B
+ 		operation = '-' -> return a new matrix equal to A - B
+ 		operation = '*' -> return a new matrix equal to A * B 
+			(arbitrary matrix-vector product)
+		operation = '\' -> backsolve similar to MATLAB x = A\b
+x = Matrix(double y, Matrix A, char operation); perform an operation on y & A
+		operation = '*' -> scalar-matrix product y*A
+
+
+Methods (assume A is of class Matrix, e.g., Matrix A = new Matrix()):
+A.rows = (int) number of rows in A
+A.columns = (int) number of columns in A
+A.element[j][k] = (double) element at row j, column k
+	NOTE: indexes begin at zero (i.e., A[0][0]).
+A.sub(int r1, int r2, int c1, int c2)	(Matrix)
+	returns the submatrix specified by the row and column range arguments
+	requires r2>=r1, c2>=c1
+A.toString(int n)	(String) Returns a nicely formatted string version of the
+			matrix A with n displayed digits
+A.permute(int a1, int a2, char c) 	(Matrix)
+	Returns a permuted matrix according  code c
+	where c is in {'c', 'r'} for columns or rows and
+	a1, a2 represent the columns/rows to swap
+A.norm() 	(double) returns the Frobenius norm (Matrix), or Euclidean norm (vector)
+	   	This is the default norm for a Matrix object. Use the Norm
+	   	class for different norms.
+A.transpose()	(Matrix) Returns the transpose of A.
+A.sum()		(double) Returns the sum of the elements in A
+A.max()		(double) Returns the largest (most positive) element of A
+A.average()	(double) Returns the average of the elements in A
+A.sumSquares()	(double) Returns the sum of the squares of the elements in A
+A.Q()		(Matrix) Returns the QR decomposition of A (can be non-square)
+A.R()		(Matrix) Returns the QR decomposition of A (can be non-square)
+A.qr()		(Vector) Returns a java.util.Vector object with
+			(Matrix)Q in the first position and (Matrix)R in the 2nd.
+A.genp()	(Vector) Returns a java.util.Vector object with
+		(Matrix) P a permutation matrix in the first position
+		(Matrix) L in the 2nd position, in which PA = LU
+		(Matrix) U in the 3rd position, where PA = LU
+		genp usues NO PIVOTING (for example purposes)
+A.gepp()	(Vector) Returns a java.util.Vector object with
+		(Matrix) P a permutation matrix in the first position
+		(Matrix) L in the 2nd position, in which PA = LU
+		(Matrix) U in the 3rd position, where PA = LU
+		The usual Gaussian elimination
+A.toHess()	(Vector) Returns a java.util.Vector object with the following entries:
+		(Matrix) Q in the 1st position
+		(Matrix) H in the 2nd position
+		where Q'AQ = H, H = upper Hessenberg, Q'Q = I
+A.sort()	(Matrix) Assumes A is a column vector. Returns a sorted vector
+		in column one of the matrix and a permutation vector in column 2
+		(uses Quicksort)
+
+*/
+
+package dwvisser.math;
+
+import java.util.*;
+import java.text.NumberFormat;
+
+public class Matrix {
+
+	public final int rows, columns;
+	public final double[][] element; // the array containing the matrix
+
+	public Matrix(int r, int c) {
+		// contructor: creates an empty r by c matrix
+		rows = r;
+		columns = c;
+		element = new double[rows][columns];
+	}
+
+	public Matrix(double d) {
+		// contructor: creates a 1x1 matrix of double d
+		rows = 1;
+		columns = 1;
+		element = new double[1][1];
+		element[0][0] = d;
+	}
+
+	/**
+	 * Create a matrix by adding, subtracting, multiplying or
+	 * solving a linear...
+	 * 
+	 * @param m1 left matrix
+	 * @param m2 right matrix
+	 * @param code '+' for add, '-' for subtract, '*' for multiply, '\\' for solving by decomposition
+	 */
+	public Matrix(Matrix m1, Matrix m2, char code) {
+		// constructor method for matrix add, product and so on
+		if (((code == '+') || (code == '-'))
+			&& (m1.rows == m2.rows)
+			&& (m1.columns == m2.columns)) {
+			// add
+			rows = m1.rows;
+			columns = m1.columns;
+			element = new double[rows][columns];
+			int i, j;
+			for (i = 0; i < rows; i++) {
+				for (j = 0; j < columns; j++) {
+					switch (code) {
+						case '+' :
+							element[i][j] = m1.element[i][j] + m2.element[i][j];
+							break;
+						case '-' :
+							element[i][j] = m1.element[i][j] - m2.element[i][j];
+							break;
+						default : //guaranteed to be one of '+' or '-'
+					}
+				}
+			}
+		} else if ((code == '*') && (m1.columns == m2.rows)) {
+			// matrix product
+			double sum = 0;
+			int k = 0;
+			rows = m1.rows;
+			columns = m2.columns;
+			element = new double[rows][columns];
+			int i, j;
+			for (i = 0; i < rows; i++) {
+				for (k = 0; k < m2.columns; k++) {
+					for (j = 0; j < m1.columns; j++) {
+						sum = sum + m1.element[i][j] * m2.element[j][k];
+					}
+					element[i][k] = sum;
+					sum = 0;
+				}
+			}
+		} else if ((code == '*') && (m1.columns == 1) && (m1.rows == 1)) {
+			// scalar-vector product
+			rows = m2.rows;
+			columns = m2.columns;
+			element = new double[rows][columns];
+			int i, j;
+			for (i = 0; i < rows; i++) {
+				for (j = 0; j < columns; j++) {
+					element[i][j] = m1.element[0][0] * m2.element[i][j];
+				}
+			}
+		} else if ((code == '/') && (m2.columns == 1) && (m2.rows == 1)) {
+			// vector-scalar division
+			rows = m1.rows;
+			columns = m1.columns;
+			element = new double[rows][columns];
+			int i, j;
+			for (i = 0; i < rows; i++) {
+				for (j = 0; j < columns; j++) {
+					element[i][j] = m1.element[i][j] / m2.element[0][0];
+				}
+			}
+		} else if (
+			(code == '\\')
+				&& (m1.columns == m1.rows)
+				&& (m2.columns == 1)
+				&& (m2.rows == m1.rows)) {
+			/* Solve a general, dense, non-singular linear system Ax=b via QR, where
+			   A=m1, b=m2, and x is returned.
+			*/
+			rows = m1.rows;
+			columns = 1;
+			element = new double[rows][columns];
+			int i, j;
+			double sum = 0;
+
+			element[rows - 1][0] =
+				m2.element[rows - 1][0] / m1.element[rows - 1][rows - 1];
+
+			i = rows - 1;
+			while (i >= 0) {
+				sum = 0;
+				j = rows - 1;
+				while (j >= i + 1) {
+					sum = sum + m1.element[i][j] * element[j][0];
+					j--;
+				}
+				element[i][0] = (m2.element[i][0] - sum) / m1.element[i][i];
+				i--;
+			}
+		} else {
+			rows = 0;
+			columns = 0;
+			element = new double[rows][columns];
+		}
+
+	}
+
+	/**
+	 * Return a Matrix multiplied by a constant.
+	 *  
+	 * @param x the constant
+	 * @param m the initial matrix
+	 */
+	public Matrix(double x, Matrix m) {
+		rows = m.rows;
+		columns = m.columns;
+		element = new double[rows][columns];
+		int i, j;
+		for (i = 0; i < rows; i++) {
+			for (j = 0; j < columns; j++) {
+				element[i][j] = x * m.element[i][j];
+			}
+		}
+	}
+
+	public Matrix(int r, int c, double fill) {
+		// contructor: creates an  r by c matrix with entries 'fill'
+		rows = r;
+		columns = c;
+		element = new double[rows][columns];
+		int i, j;
+		for (i = 0; i < rows; i++) {
+			for (j = 0; j < columns; j++) {
+				element[i][j] = fill;
+			}
+		}
+	}
+
+	public Matrix(Matrix m) {
+		// contructor: creates a new replicate of m
+		rows = m.rows;
+		columns = m.columns;
+		element = new double[rows][columns];
+		int i, j;
+		for (i = 0; i < rows; i++) {
+			for (j = 0; j < columns; j++) {
+				element[i][j] = m.element[i][j];
+			}
+		}
+	}
+
+	public Matrix(int r, int c, char code) {
+		// contructor: creates an  r by c special matrix
+		rows = r;
+		columns = c;
+		element = new double[rows][columns];
+		int i, j;
+		if ((code == 'i') || (code == 'I')) {
+			// make an identity matrix
+			for (i = 0; i < r; i++) {
+				if (i < c) {
+					element[i][i] = 1;
+				}
+			}
+		} else if ((code == 'h') || (code == 'H')) {
+			// make a Hilbert matrix
+			for (i = 0; i < r; i++) {
+				for (j = 0; j < c; j++) {
+					element[i][j] = 1 / ((double) i + (double) j + 1);
+				}
+			}
+		} else if ((code == 'r') || (code == 'R')) {
+			// make a random matrix with entries uniform in [0, 1]
+			for (i = 0; i < r; i++) {
+				for (j = 0; j < c; j++) {
+					element[i][j] = Math.random();
+				}
+			}
+		}
+	}
+
+	public Matrix(String s) {
+		// constructor: creates a matrix and parses the string into the element array
+		Vector row = new Vector(); // data will be assembled into these vectors
+		Vector col = new Vector();
+		// and then transferred into the array element[][].
+
+		s = s + " ;";
+		int i = s.length();
+		int j;
+		int rowCounter = 0;
+		int colCounter = 0;
+		String sData = new String(); // will hold each element during parsing
+		//Double fl;
+		char sChar;
+		for (j = 0; j < i; j++) {
+			/*	Delimiter syntax:
+				columns separated by tabs, commas, or spaces
+				rows separated by newline or semicolon
+				short rows filled with zeros
+			*/
+			sChar = s.charAt(j);
+			// debug: System.out.println(sChar + " " + (int) sChar + "\r\n");
+
+			// check for a delimiter...
+			if ((sChar == ' ')
+				|| (sChar == ',')
+				|| ((int) sChar == 9)
+				|| (sChar == ';')
+				|| ((int) sChar == 13)
+				|| ((int) sChar == 10)) {
+				//fl = new Double(0);
+				// See if the string in sData represents a number...
+				try {
+					// a hack to accomodate JVM 1.1 and higher...
+					boolean testSpace = true;
+					int ii;
+					for (ii = 0; ii < sData.length(); ii++) {
+						testSpace = testSpace && (sData.charAt(ii) == ' ');
+					}
+					if (!testSpace) {
+						//fl = new Double(sData);
+						col.addElement(sData);
+					} // append column element as string
+					sData = new String(); // wipe out contents of string
+				} catch (Exception e) {
+					// non-numeric stuff...
+					sData = new String(); // wipe out contents of string
+				}
+
+				if (((sChar == ';')
+					|| ((int) sChar == 13)
+					|| ((int) sChar == 10))
+					&& !col.isEmpty()) {
+					row.addElement(col);
+					// append row (i.e., vector of column elements)
+					rowCounter = rowCounter + 1;
+					sData = new String(); // wipe out contents of string
+					colCounter = col.size();
+					col = new Vector(); // wipe out the column vector
+					/* an interesting Java note: use new Vector() method to
+					   force the contents of this vector to be explicitly copied
+					   into the row vector. The removeAllElements method will not
+					   work in this situation (try it!).
+					*/
+				}
+			}
+
+			// build up data...
+			else {
+				if ((Character.isDigit(sChar))
+					|| (sChar == '.')
+					|| (sChar == '-')) {
+					// allow only digit and decimal point characters
+					sData = sData + sChar; // append to string
+				}
+			}
+
+		}
+		rows = rowCounter;
+		columns = colCounter;
+		element = new double[rows][columns];
+		col = new Vector();
+		Double d = new Double(0);
+		for (j = 0; j < rows; j++) {
+			col = (Vector) row.elementAt(j);
+			for (i = 0; i < col.size(); i++) {
+				d = new Double((String) col.elementAt(i));
+				element[j][i] = d.doubleValue();
+			}
+		}
+
+	}
+
+	public Matrix transpose() {
+		// returns the transpose of this matrix object
+		Matrix t = new Matrix(columns, rows);
+		int i, j;
+		for (i = 0; i < rows; i++) {
+			for (j = 0; j < columns; j++) {
+				t.element[j][i] = this.element[i][j];
+			}
+		}
+		return t;
+	}
+
+	public Matrix sub(int r1, int r2, int c1, int c2) {
+		// returns the submatrix specified by the row and column range arguments
+		// requires r2>=r1, c2>=c1
+		Matrix A = new Matrix(r2 - r1 + 1, c2 - c1 + 1);
+		int i, j;
+		for (i = r1; i <= r2; i++) {
+			for (j = c1; j <= c2; j++) {
+				A.element[i - r1][j - c1] = this.element[i][j];
+			}
+		}
+		return A;
+	}
+
+	/**
+	 * 
+	 * @param a1 index of row or column to swap
+	 * @param a2 index of row or column to swap
+	 * @param c <code>'c'</code> if swapping columns, <code>'r'</code> if swapping rows
+	 * @return a copy the original matrix with a pair of rows or columns swapped
+	 */
+	public Matrix permute(int a1, int a2, char c) {
+		Matrix p = new Matrix(this);
+		if (c == 'r') {
+			for (int i = 0; i < columns; i++) {
+				p.element[a1][i] = this.element[a2][i];
+				p.element[a2][i] = this.element[a1][i];
+			}
+		} else if (c == 'c') {
+			for (int i = 0; i < rows; i++) {
+				p.element[i][a1] = this.element[i][a2];
+				p.element[i][a2] = this.element[i][a1];
+			}
+		}
+		return p;
+	}
+
+	public double norm() {
+		/* returns the Frobenius norm (Matrix), or Euclidean norm (Vector)
+		   This is the default norm for a Matrix object. Use the Norm
+		   class for different norms.
+		*/
+		double l = 0;
+		int i, j;
+		for (i = 0; i < rows; i++) {
+			for (j = 0; j < columns; j++) {
+				l = l + this.element[i][j] * this.element[i][j];
+			}
+		}
+		l = Math.pow(l, 0.5);
+		return l;
+	}
+
+	public double max() {
+		/* returns the most positive element of the matrix or vector */
+		double m = this.element[0][0];
+		int i, j;
+		for (i = 0; i < rows; i++) {
+			for (j = 0; j < columns; j++) {
+				if (this.element[i][j] > m) {
+					m = this.element[i][j];
+				}
+			}
+		}
+		return m;
+	}
+
+	public double sum() {
+		/* returns the sum of all the elements in the matrix or vector
+		*/
+		double s = 0;
+		int i, j;
+		for (i = 0; i < rows; i++) {
+			for (j = 0; j < columns; j++) {
+				s = s + this.element[i][j];
+			}
+		}
+		return s;
+	}
+
+	public double average() {
+		// returns the average of all the elements in the matrix or vector
+		double s = 0;
+		int i, j;
+		for (i = 0; i < rows; i++) {
+			for (j = 0; j < columns; j++) {
+				s = s + this.element[i][j];
+			}
+		}
+		return s / (columns * rows);
+	}
+
+	public double sumSquares() {
+		// returns the sum the squares of all the elements in the matrix or vector
+		double s = 0;
+		int i, j;
+		for (i = 0; i < rows; i++) {
+			for (j = 0; j < columns; j++) {
+				s = s + Math.pow(this.element[i][j], 2);
+			}
+		}
+		return s;
+	}
+
+	public Matrix Q() {
+		/*	returns the QR-decomposition of this matrix object
+			using Householder rotations, without column pivoting
+		*/
+		Matrix P = new Matrix(rows, rows, 'I');
+		Matrix A = new Matrix(this);
+		Matrix AA, PP;
+		int i, j;
+		Matrix v;
+
+		for (j = 0; j < columns; j++) {
+			v = A.sub(0, A.rows - 1, j, j);
+			if (j > 0) {
+				for (i = 0; i < j; i++) {
+					v.element[i][0] = 0;
+				}
+			}
+			v.element[j][0] =
+				v.element[j][0] + v.norm() * sign(v.element[j][0]);
+			double r = (double) - 2 / (v.norm() * v.norm());
+			AA = new Matrix(A);
+			A = new Matrix(v.transpose(), A, '*');
+			A = new Matrix(v, A, '*');
+			A = new Matrix(r, A);
+			A = new Matrix(AA, A, '+');
+			PP = new Matrix(P);
+			P = new Matrix(v.transpose(), P, '*');
+			P = new Matrix(v, P, '*');
+			P = new Matrix(r, P);
+			P = new Matrix(PP, P, '+');
+
+		}
+		return P.transpose();
+	}
+
+	public Matrix R() {
+		/*	returns the QR-decomposition of this matrix object
+			using Householder rotations, without column pivoting
+		*/
+		Matrix P = new Matrix(rows, rows, 'I');
+		Matrix A = new Matrix(this);
+		Matrix AA, PP;
+		int i, j;
+		Matrix v;
+
+		for (j = 0; j < columns; j++) {
+			v = A.sub(0, A.rows - 1, j, j);
+			if (j > 0) {
+				for (i = 0; i < j; i++) {
+					v.element[i][0] = 0;
+				}
+			}
+			v.element[j][0] =
+				v.element[j][0] + v.norm() * sign(v.element[j][0]);
+			double r = (double) - 2 / (v.norm() * v.norm());
+			AA = new Matrix(A);
+			A = new Matrix(v.transpose(), A, '*');
+			A = new Matrix(v, A, '*');
+			A = new Matrix(r, A);
+			A = new Matrix(AA, A, '+');
+			PP = new Matrix(P);
+			P = new Matrix(v.transpose(), P, '*');
+			P = new Matrix(v, P, '*');
+			P = new Matrix(r, P);
+			P = new Matrix(PP, P, '+');
+
+		}
+		return A;
+	}
+
+	/**
+	 * 
+	 * @return the QR-decomposition of this matrix object using Householder rotations, without column pivoting
+	 */
+	public List qr() {
+		List result = new ArrayList();
+		Matrix P = new Matrix(rows, rows, 'I');
+		Matrix A = new Matrix(this);
+		Matrix AA, PP;
+		int i, j;
+		Matrix v;
+
+		for (j = 0; j < columns; j++) {
+			v = A.sub(0, A.rows - 1, j, j);
+			if (j > 0) {
+				for (i = 0; i < j; i++) {
+					v.element[i][0] = 0;
+				}
+			}
+			v.element[j][0] =
+				v.element[j][0] + v.norm() * sign(v.element[j][0]);
+			double r = (double) - 2 / (v.norm() * v.norm());
+			AA = new Matrix(A);
+			A = new Matrix(v.transpose(), A, '*');
+			A = new Matrix(v, A, '*');
+			A = new Matrix(r, A);
+			A = new Matrix(AA, A, '+');
+			PP = new Matrix(P);
+			P = new Matrix(v.transpose(), P, '*');
+			P = new Matrix(v, P, '*');
+			P = new Matrix(r, P);
+			P = new Matrix(PP, P, '+');
+		}
+		result.add(A); // R (at element 0)
+		result.add(P.transpose()); // Q (at element 1)
+		return result;
+	}
+
+	/**
+	 * Makes the matrix upper Hessenberg via Householder rotations
+	 * 
+	 * @return P, H, s.t. P' * this * P = H and H is upper Hessenberg and P' * P = I.
+	 */
+	public List toHess() {
+		List result = new ArrayList(); // the result
+		Matrix P = new Matrix(rows, columns, 'I');
+		Matrix I = new Matrix(rows, columns, 'I');
+		Matrix A = new Matrix(this);
+		for (int j = 0; j < columns - 2; j++) {
+			Matrix v = new Matrix(rows, 1);
+			v.element[j][0] = 1;
+			v = new Matrix(A, v, '*'); // get the j-th column
+			for (int i = 0; i < (j + 1); i++) {
+				v.element[i][0] = 0;
+
+			}
+			v.element[j + 1][0] =
+				v.element[j + 1][0] + v.norm() * sign(v.element[j + 1][0]);
+			double r = (double) - 2 / (v.norm() * v.norm());
+			v = new Matrix(v, v.transpose(), '*');
+			v = new Matrix(r, v);
+			v = new Matrix(I, v, '+');
+			P = new Matrix(P, v, '*');
+			A = new Matrix(P.transpose(), this, '*');
+			A = new Matrix(A, P, '*');
+		}
+		result.add(P); // the orthogonal operator
+		result.add(A); // the upper-Hessenberg form
+		return result;
+	}
+
+	/**
+	 * returns the LU decomposition of a matrix using the Gauss
+	 * transform. This algorithm returns 3 matrices as follows:
+	 * [P, L, U] such that LU = PA. This algorithm performs no
+	 * pivoting other than to assure that the matrix is non-singular.
+	 * As such, it is practical only from a pedagogical standpoint.
+	 * Written 3-March, 1997.
+	 * 
+	 * @return the LU decomposition of a matrix
+	 */
+	public List genp() {
+		List v = new ArrayList(); // the result
+		Matrix P = new Matrix(rows, columns, 'I');
+		// P will track the permutations
+		Matrix L = new Matrix(rows, columns, 'I'); // the lower triangle
+		Matrix U = this; // this matrix to be transformed to upper triangular
+		Matrix G = new Matrix(rows, columns, 'I');
+		// temporary Gauss transform matrix
+		int i, j, k;
+
+		for (j = 0; j < columns - 1; j++) {
+			for (i = (j + 1); i < rows; i++) {
+				if (U.element[j][j] != 0) {
+					G.element[i][j] = -U.element[i][j] / U.element[j][j];
+				}
+			}
+			U = new Matrix(G, U, '*');
+			for (k = (j + 1); k < rows; k++) {
+				L.element[k][j] = -G.element[k][j];
+				G.element[k][j] = 0;
+			}
+		}
+
+		v.add(P);
+		v.add(L);
+		v.add(U);
+		return v;
+	}
+
+	/**
+	 * Returns the LU decomposition of a matrix using the Gauss
+	 * transform. This algorithm returns 3 matrices as follows:
+	 * [P, L, U] such that LU = PA. This algorithm performs partial
+	 * pivoting.
+	 * Written 3-March, 1997 by Bryan Lewis
+	 * 
+	 * @return the LU decomposition of a matrix
+	 */
+	public List gepp() {
+		List v = new ArrayList(); // the result
+		Matrix P = new Matrix(rows, columns, 'I');
+		// P will track the permutations
+		Matrix L = new Matrix(rows, columns, 'I'); // the lower triangle
+		Matrix U = this; // this matrix to be transformed to upper triangular
+		Matrix G = new Matrix(rows, columns, 'I');
+		// temporary Gauss transform matrix
+		int i, j, k, p;
+		double d;
+
+		for (j = 0; j < columns - 1; j++) {
+			// start of parital pivot code:
+			d = Math.abs(U.element[j][j]);
+			p = j;
+			for (i = j + 1; i < rows; i++) {
+				if (Math.abs(U.element[i][j]) > d) {
+					// System.out.println(U.element[i][j] +", "+i);
+					d = Math.abs(U.element[i][j]);
+					p = i;
+				}
+			}
+			if (p > j) {
+				U = U.permute(j, p, 'r');
+				P = P.permute(j, p, 'r'); // don't forget to track permutations
+			}
+			// end of partial pivot code.
+
+			for (i = j + 1; i < rows; i++) {
+				if (U.element[j][j] != 0) {
+					G.element[i][j] = -U.element[i][j] / U.element[j][j];
+				}
+			}
+			U = new Matrix(G, U, '*');
+			L = L.permute(j, p, 'r');
+			for (k = 0; k < j; k++) {
+				L.element[k][j] = 0;
+			}
+			L.element[j][j] = 1;
+			for (k = j + 1; k < rows; k++) {
+				L.element[k][j] = -G.element[k][j];
+				G.element[k][j] = 0;
+			}
+
+		}
+		for (k = 0; k < rows; k++) {
+			L.element[k][columns - 1] = 0;
+		}
+		L.element[rows - 1][columns - 1] = 1;
+
+		v.add(P);
+		v.add(L);
+		v.add(U);
+		return v;
+
+	}
+
+	/**
+	 * Very basic LR eigenvalue method (no pivot) for illustration only.
+	 * 
+	 * @param iter number of iterations
+	 * @return ?
+	 */
+	public Matrix lr(int iter) {
+		Matrix L = new Matrix(rows, columns);
+		Matrix U = new Matrix(rows, columns);
+		Matrix A = new Matrix(this); // initialized
+		int i;
+		for (i = 0; i < iter; i++) {
+			List v = A.genp(); // get LU factorization
+			L = (Matrix) v.get(1);
+			U = (Matrix) v.get(2);
+			A = new Matrix(U, L, '*');
+		}
+		return A;
+	}
+
+	/**
+	 * Super basic QR eigenvalue method (example use only)
+	 * Since this method uses the Householder-QR, it is O(n^3) and
+	 * not too efficient. I will also implement a QR-givens method
+	 * for Hessenberg or 3-diagonal matrices.
+	 * 
+	 * @param iter number of iterations
+	 * @return not sure
+	 */
+	public Matrix qreig(int iter) {
+		Matrix Q = new Matrix(rows, columns);
+		Matrix R = new Matrix(rows, columns);
+		Matrix A = new Matrix(this); // initialized
+		int i;
+		for (i = 0; i < iter; i++) {
+			List qr = A.qr();
+			Q = (Matrix) qr.get(1);
+			R = (Matrix) qr.get(0);
+			A = new Matrix(R, Q, '*');
+		}
+		return A;
+	}
+
+	/**
+	 * Elementary QR  method method to find the spectral radius of
+	 * a positive valued matrix. 
+	 *	
+	 * @param p precision desired. For example, if A is a Matrix of  positive real numbers, then A.leig(0.01) returns the largest eigenvalue to at least two digits of accuracy.
+	 * @return the spectral radius of a positive valued matrix 
+	 */
+	public double leig(double p) {
+		Matrix Q = new Matrix(rows, columns);
+		Matrix R = new Matrix(rows, columns);
+		Matrix A = new Matrix(this); // initialized
+		int i = 1;
+		int maxIter = 200 - this.rows;
+		if (maxIter < 25) {
+			maxIter = 25;
+		} // set up a maximum iteration count
+		double v = 99; // temporary result
+		double res = 99; // residual
+		while ((i < maxIter) && (res > p)) {
+			List qr = A.qr();
+			Q = (Matrix) qr.get(1);
+			R = (Matrix) qr.get(0);
+			A = new Matrix(R, Q, '*');
+			i++;
+			res = Math.abs(A.element[0][0] - v);
+			v = A.element[0][0];
+		}
+		return A.element[0][0];
+	}
+
+	public String toString(int d) {
+		// this method returns a string representation of the matrix
+		// d displayed fractional digits
+		NumberFormat nf = NumberFormat.getInstance();
+		nf.setMaximumFractionDigits(d);
+		nf.setMinimumFractionDigits(d);
+		String outPut = new String();
+		String num = new String();
+		int i, j;
+		for (i = 0; i < this.rows; i++) {
+			for (j = 0; j < this.columns; j++) {
+				Double x = new Double(this.element[i][j]);
+				//num = x.toString();
+				num = nf.format(x);
+				outPut = outPut + num + (char) 9;
+			}
+			outPut = outPut + "\n";
+		}
+		return outPut;
+	}
+
+	public String toStringUL(int d) {
+		// this method returns a string representation of the matrix
+		// d displayed fractional digits
+		if (this.rows != this.columns)
+			return ("Error: toStringUR() not square!");
+		NumberFormat nf = NumberFormat.getInstance();
+		nf.setMaximumFractionDigits(d);
+		nf.setMinimumFractionDigits(d);
+		String outPut = new String();
+		String num = new String();
+		int i, j;
+		for (i = 0; i < this.rows; i++) {
+			for (j = 0; j <= i; j++) {
+				Double x = new Double(this.element[i][j]);
+				//num = x.toString();
+				num = nf.format(x);
+				outPut = outPut + num + (char) 9;
+			}
+			outPut = outPut + "\n";
+		}
+		return outPut;
+	}
+
+	public Matrix sort() {
+		/*	Sorts this vector. Returns sorted vector in the 1st column of a
+			two column matrix and a permutation vector in the 2nd column.
+			(here, 'vector' indicates a 1-d Matrix, not the Java class Vector).
+		*/
+		int lngth = 0;
+		int i = 0;
+		double[] a = new double[1];
+		int[] indx = new int[1];
+
+		if (this.rows == 1) {
+			lngth = this.columns;
+			a = new double[lngth]; // contains the data for sorting
+			indx = new int[lngth]; // index array
+			for (i = 0; i < lngth; i++) {
+				a[i] = this.element[0][i];
+				indx[i] = i + 1;
+			}
+		} else if (this.columns == 1) {
+			lngth = this.rows;
+			a = new double[lngth]; // contains the data for sorting
+			indx = new int[lngth]; // index array
+			for (i = 0; i < lngth; i++) {
+				a[i] = this.element[i][0];
+				indx[i] = i + 1;
+			}
+		}
+
+		qsort(a, indx, 0, lngth - 1);
+		Matrix R = new Matrix(lngth, 2);
+		for (i = 0; i < lngth; i++) {
+			R.element[i][0] = a[i];
+			R.element[i][1] = indx[i];
+		}
+		return R;
+
+	}
+
+	public Matrix order() {
+		/*	Sorts this vector, returning a ranked vector,
+			(here, 'vector' indicates a 1-d Matrix, not the Java class Vector).
+			'order' is used so as to not confuse with the usual definition of rank
+		*/
+		Matrix S = this.sort();
+		Matrix y = new Matrix(S.rows, 1);
+		double[] v = new double[S.rows];
+		// the only trick here is to handle ties!
+		int i = 0, k, j, l;
+		while (i < S.rows) {
+			j = 0;
+			l = 0;
+			for (k = i; k < S.rows; k++) {
+				if (S.element[k][0] == S.element[i][0]) {
+					j = j + 1;
+					l = l + k + 1;
+				}
+			}
+			for (k = 0; k < j; k++) {
+				v[i + k] = (double) (((double) (l)) / (double) j);
+			}
+			i = i + j;
+		}
+		// now unsort v and return it...
+		for (i = 0; i < S.rows; i++) {
+			y.element[(int) S.element[i][1] - 1][0] = v[i];
+		}
+		return y;
+	}
+
+	// The following methods are used internally by the Matrix class:
+
+	private double sign(double d) {
+		// returns the sign of the supplied double-precision argument
+		double s = 1;
+		if (d < 0) {
+			s = -1;
+		}
+		return s;
+	}
+
+	/**
+	 * Implementation of QuickSort algorithm to an 
+	 * array of doubles, using recursion.
+	 * 
+	 * @param a array to sort, returned sorted
+	 * @param index array of indices, returned showing the permutation used to sort
+	 * @param lo0 low end of range to sort
+	 * @param hi0 hi end of range to sort
+	 */
+	private void qsort(double a[], int index[], int lo0, int hi0) {
+		int lo = lo0;
+		int hi = hi0;
+		if (hi0 > lo0) {
+			double mid = a[(lo0 + hi0) / 2];
+			while (lo <= hi) {
+				while ((lo < hi0) && (a[lo] < mid))
+					++lo;
+				while ((hi > lo0) && (a[hi] > mid))
+					--hi;
+				if (lo <= hi) {
+					swap(a, lo, hi);
+					swap(index, lo, hi);
+					++lo;
+					--hi;
+				}
+			}
+			if (lo0 < hi)
+				qsort(a, index, lo0, hi);
+			if (lo < hi0)
+				qsort(a, index, lo, hi0);
+		}
+	}
+
+	private void swap(double a[], int i, int j) {
+		double T = a[i];
+		a[i] = a[j];
+		a[j] = T;
+	}
+
+	private void swap(int a[], int i, int j) {
+		int T = a[i];
+		a[i] = a[j];
+		a[j] = T;
+	}
+
+	public void rowMultiply(int row, double factor) {
+		for (int i = 0; i < this.columns; i++) {
+			this.element[row][i] = this.element[row][i] * factor;
+		}
+	}
+
+}

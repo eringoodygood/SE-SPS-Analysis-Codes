@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workbench progressCount="18" version="2.0">
+<workbenchAdvisor/>
+<window height="728" maximized="true" width="1280" x="0" y="23">
+<fastViewData fastViewLocation="1024"/>
+<perspectiveBar>
+<itemSize x="160"/>
+</perspectiveBar>
+<coolbarLayout locked="0">
+<coolItem id="group.file" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="84" y="22"/>
+<coolItem id="additions" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="100" y="22"/>
+<coolItem id="org.eclipse.jdt.ui.JavaElementCreationActionSet" itemType="typeToolBarContribution" x="84" y="22"/>
+<coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="62" y="22"/>
+<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="98" y="22"/>
+<coolItem id="group.nav" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="152" y="22"/>
+<coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="org.eclipse.ui.browser.editor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.jdt.ui.ClassFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="group.help" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
+</coolbarLayout>
+<page aggregateWorkingSetId="Aggregate for window 1265929034447" focus="true" label="Workspace - Java">
+<editors>
+<editorArea activeWorkbook="DefaultEditorWorkbook">
+<info part="DefaultEditorWorkbook">
+<folder appearance="1" expanded="2">
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+<part id="3"/>
+<part id="4"/>
+<part id="5"/>
+<part id="6"/>
+<part id="7"/>
+<part id="8"/>
+</presentation>
+</folder>
+</info>
+</editorArea>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="EngeSABRE_Simulation.java" partName="EngeSABRE_Simulation.java" path="/Users/catherinemdeibel/Documents/workspace/Astro Code SABRE/dwvisser/monte/EngeSABRE_Simulation.java" title="EngeSABRE_Simulation.java" tooltip="Astro Code SABRE/dwvisser/monte/EngeSABRE_Simulation.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Astro Code SABRE/dwvisser/monte/EngeSABRE_Simulation.java"/>
+<editorState selectionHorizontalPixel="406" selectionLength="2" selectionOffset="2395" selectionTopPixel="435"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DetectorFrame.java" partName="DetectorFrame.java" path="/Users/catherinemdeibel/Documents/workspace/Astro Code SABRE/dwvisser/monte/DetectorFrame.java" title="DetectorFrame.java" tooltip="Astro Code SABRE/dwvisser/monte/DetectorFrame.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Astro Code SABRE/dwvisser/monte/DetectorFrame.java"/>
+<editorState selectionHorizontalPixel="5" selectionLength="2" selectionOffset="4473" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Direction.java" partName="Direction.java" path="/Users/catherinemdeibel/Documents/workspace/Astro Code SABRE/dwvisser/monte/Direction.java" title="Direction.java" tooltip="Astro Code SABRE/dwvisser/monte/Direction.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Astro Code SABRE/dwvisser/monte/Direction.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="2" selectionOffset="1001" selectionTopPixel="243"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MicronDetector.java" partName="MicronDetector.java" path="/Users/catherinemdeibel/Documents/workspace/Astro Code SABRE/dwvisser/monte/MicronDetector.java" title="MicronDetector.java" tooltip="Astro Code SABRE/dwvisser/monte/MicronDetector.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Astro Code SABRE/dwvisser/monte/MicronDetector.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2604" selectionTopPixel="644"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MicronDetector.java" partName="MicronDetector.java" path="/Users/catherinemdeibel/Documents/workspace/Astro Code/dwvisser/monte/MicronDetector.java" title="MicronDetector.java" tooltip="Astro Code/dwvisser/monte/MicronDetector.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Astro Code/dwvisser/monte/MicronDetector.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="9259" selectionTopPixel="2256"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DataSet.java" partName="DataSet.java" path="/Users/catherinemdeibel/Documents/workspace/Astro Code/dwvisser/monte/DataSet.java" title="DataSet.java" tooltip="Astro Code/dwvisser/monte/DataSet.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Astro Code/dwvisser/monte/DataSet.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2410" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Matrix.java" partName="Matrix.java" path="/Users/catherinemdeibel/Documents/workspace/Astro Code/dwvisser/math/Matrix.java" title="Matrix.java" tooltip="Astro Code/dwvisser/math/Matrix.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Astro Code/dwvisser/math/Matrix.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="66" selectionTopPixel="397"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RandomNumbers.java" partName="RandomNumbers.java" path="/Users/catherinemdeibel/Documents/workspace/Astro Code SABRE/dwvisser/monte/RandomNumbers.java" title="RandomNumbers.java" tooltip="Astro Code SABRE/dwvisser/monte/RandomNumbers.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Astro Code SABRE/dwvisser/monte/RandomNumbers.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="7" selectionOffset="2593" selectionTopPixel="855"/>
+</editor>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SplitPoleTAJ_gscint2_CT.java" partName="SplitPoleTAJ_gscint2_CT.java" path="/Users/catherinemdeibel/Documents/workspace/Sort Routines/sort/newVME/SplitPoleTAJ_gscint2_CT.java" title="SplitPoleTAJ_gscint2_CT.java" tooltip="Sort Routines/sort/newVME/SplitPoleTAJ_gscint2_CT.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Sort Routines/sort/newVME/SplitPoleTAJ_gscint2_CT.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="7" selectionOffset="18427" selectionTopPixel="6900"/>
+</editor>
+</editors>
+<views>
+<view id="org.eclipse.jdt.ui.TypeHierarchy" partName="Hierarchy">
+<viewState hidefields="false" hidelocaltypes="false" hidenonpublic="false" hidestatic="false" link_editors="0" mv_vertical_scroll="0" orientation="3" qualified_names="0" ratio="350" showinherited="false" sortbydefiningtype="false" vertical_scroll="0" view="2" workingSetName="Aggregate for window 1265929034447"/>
+</view>
+<view id="org.eclipse.search.ui.views.SearchView" partName="Search">
+<viewState isPinned="false">
+<view IMemento.internal.id="" org.eclipse.search.lastActivation="0"/>
+<view IMemento.internal.id="org.eclipse.jdt.ui.JavaSearchResultPage" org.eclipse.jdt.search.resultpage.grouping="3" org.eclipse.jdt.search.resultpage.limit="1000" org.eclipse.jdt.search.resultpage.limit_enabled="TRUE" org.eclipse.jdt.search.resultpage.sorting="1" org.eclipse.search.lastActivation="1" org.eclipse.search.resultpage.layout="2"/>
+</viewState>
+</view>
+<view id="org.eclipse.ui.views.ProblemView" partName="Problems">
+<viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
+<columnWidths org.eclipse.ui.ide.locationField="84" org.eclipse.ui.ide.markerType="114" org.eclipse.ui.ide.pathField="144" org.eclipse.ui.ide.resourceField="114" org.eclipse.ui.ide.severityAndDescriptionField="300"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.pathField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.locationField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.markerType"/>
+</viewState>
+</view>
+<view id="org.eclipse.ui.console.ConsoleView" partName="Console">
+<viewState/>
+</view>
+<view id="org.eclipse.jdt.ui.PackageExplorer" partName="Package Explorer">
+<viewState group_libraries="1" layout="2" linkWithEditor="0" rootMode="1" workingSetName="Aggregate for window 1265929034447">
+<customFilters userDefinedPatternsEnabled="false">
+<xmlDefinedFilters>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.LibraryFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.LocalTypesFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.StaticsFilter" isEnabled="false"/>
+<child filterId="org.eclipse.pde.ui.ExternalPluginLibrariesFilter1" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.ClosedProjectsFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.NonSharedProjectsFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.NonJavaElementFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.ContainedLibraryFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.CuAndClassFileFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.NonJavaProjectsFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.internal.ui.PackageExplorer.EmptyInnerPackageFilter" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.PackageDeclarationFilter" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.internal.ui.PackageExplorer.EmptyPackageFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.ImportDeclarationFilter" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.FieldsFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.internal.ui.PackageExplorer.HideInnerClassFilesFilter" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.NonPublicFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer_patternFilterId_.*" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.EmptyLibraryContainerFilter" isEnabled="true"/>
+<child filterId="org.eclipse.pde.ui.BinaryProjectFilter1" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.SyntheticMembersFilter" isEnabled="true"/>
+</xmlDefinedFilters>
+</customFilters>
+</viewState>
+</view>
+<view id="org.eclipse.ui.views.ContentOutline" partName="Outline">
+<viewState/>
+</view>
+<view id="org.eclipse.jdt.ui.SourceView" partName="Declaration">
+<viewState/>
+</view>
+<view id="org.eclipse.jdt.ui.JavadocView" partName="Javadoc">
+<viewState/>
+</view>
+</views>
+<perspectives activePart="org.eclipse.jdt.ui.PackageExplorer" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
+<perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
+<descriptor class="org.eclipse.jdt.internal.ui.JavaPerspectiveFactory" id="org.eclipse.jdt.ui.JavaPerspective" label="Java"/>
+<alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.search.searchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.annotationNavigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.convertLineDelimitersTo"/>
+<alwaysOnActionSet id="org.eclipse.ui.externaltools.ExternalToolsSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.keyBindings"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.openFiles"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.launchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.jdt.ui.JavaActionSet"/>
+<alwaysOnActionSet id="org.eclipse.jdt.ui.JavaElementCreationActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.NavigateActionSet"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.breakpointActionSet"/>
+<alwaysOnActionSet id="org.eclipse.jdt.debug.ui.JDTDebugActionSet"/>
+<alwaysOnActionSet id="org.eclipse.jdt.junit.JUnitActionSet"/>
+<show_view_action id="org.eclipse.jdt.ui.PackageExplorer"/>
+<show_view_action id="org.eclipse.jdt.ui.TypeHierarchy"/>
+<show_view_action id="org.eclipse.jdt.ui.SourceView"/>
+<show_view_action id="org.eclipse.jdt.ui.JavadocView"/>
+<show_view_action id="org.eclipse.search.ui.views.SearchView"/>
+<show_view_action id="org.eclipse.ui.console.ConsoleView"/>
+<show_view_action id="org.eclipse.ui.views.ContentOutline"/>
+<show_view_action id="org.eclipse.ui.views.ProblemView"/>
+<show_view_action id="org.eclipse.ui.views.ResourceNavigator"/>
+<show_view_action id="org.eclipse.ui.views.TaskList"/>
+<show_view_action id="org.eclipse.ui.views.ProgressView"/>
+<show_view_action id="org.eclipse.ui.navigator.ProjectExplorer"/>
+<show_view_action id="org.eclipse.ui.texteditor.TemplatesView"/>
+<show_view_action id="org.eclipse.ant.ui.views.AntView"/>
+<show_view_action id="org.eclipse.pde.runtime.LogView"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.JavaProjectWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewPackageCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewClassCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewInterfaceCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewEnumCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewAnnotationCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewSourceFolderCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewSnippetFileCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewJavaWorkingSetWizard"/>
+<new_wizard_action id="org.eclipse.ui.wizards.new.folder"/>
+<new_wizard_action id="org.eclipse.ui.wizards.new.file"/>
+<new_wizard_action id="org.eclipse.ui.editors.wizards.UntitledTextFileWizard"/>
+<new_wizard_action id="org.eclipse.jdt.junit.wizards.NewTestCaseCreationWizard"/>
+<perspective_action id="org.eclipse.debug.ui.DebugPerspective"/>
+<perspective_action id="org.eclipse.jdt.ui.JavaBrowsingPerspective"/>
+<hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
+<view id="org.eclipse.jdt.ui.PackageExplorer"/>
+<view id="org.eclipse.jdt.ui.TypeHierarchy"/>
+<view id="org.eclipse.ui.views.ProblemView"/>
+<view id="org.eclipse.jdt.ui.JavadocView"/>
+<view id="org.eclipse.jdt.ui.SourceView"/>
+<view id="org.eclipse.ui.console.ConsoleView"/>
+<view id="org.eclipse.search.ui.views.SearchView"/>
+<view id="org.eclipse.ui.views.ContentOutline"/>
+<fastViewBars/>
+<layout>
+<mainWindow>
+<info folder="true" part="left">
+<folder activePageID="org.eclipse.jdt.ui.PackageExplorer" appearance="2" expanded="2">
+<page content="org.eclipse.jdt.ui.PackageExplorer" label="Package Explorer"/>
+<page content="org.eclipse.jdt.ui.TypeHierarchy" label="Hierarchy"/>
+<page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
+<page content="org.eclipse.ui.navigator.ProjectExplorer" label="LabelNotFound"/>
+<page content="org.eclipse.jdt.junit.ResultView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@c116a8" ratio="0.75" ratioLeft="762" ratioRight="254" relationship="2" relative="left">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
+<page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+</folder>
+</info>
+<info part="org.eclipse.ui.editorss" ratio="0.21243523" ratioLeft="328" ratioRight="1216" relationship="2" relative="left"/>
+<info folder="true" part="bottom" ratio="0.7488226" ratioLeft="477" ratioRight="160" relationship="4" relative="org.eclipse.ui.editorss">
+<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
+<page content="org.eclipse.jdt.ui.JavadocView" label="Javadoc"/>
+<page content="org.eclipse.jdt.ui.SourceView" label="Declaration"/>
+<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
+<page content="org.eclipse.search.ui.views.SearchView" label="Search"/>
+<page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.ProgressView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+<part id="3"/>
+<part id="4"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="right" ratio="0.7493438" ratioLeft="571" ratioRight="191" relationship="2" relative="org.eclipse.ui.editorss">
+<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
+<page content="org.eclipse.ui.texteditor.TemplatesView" label="LabelNotFound"/>
+<page content="org.eclipse.ant.ui.views.AntView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+</presentation>
+</folder>
+</info>
+</mainWindow>
+</layout>
+</perspective>
+</perspectives>
+<workingSets/>
+<navigationHistory>
+<editors>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Astro Code SABRE/dwvisser/monte/Direction.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Astro Code SABRE/dwvisser/monte/MicronDetector.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Astro Code SABRE/dwvisser/monte/DetectorFrame.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Astro Code/dwvisser/monte/DataSet.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Astro Code SABRE/dwvisser/monte/EngeSABRE_Simulation.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Astro Code SABRE/dwvisser/monte/RandomNumbers.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Astro Code/dwvisser/math/Matrix.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Astro Code SABRE/dwvisser/monte/DetectorFrame.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Astro Code SABRE/dwvisser/monte/MicronDetector.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Astro Code SABRE/dwvisser/monte/Direction.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Sort Routines/sort/newVME/SplitPoleTAJ_gscint2_CT.java"/>
+</editors>
+<item historyLabel="DataSet.java" index="3">
+<position info="not_deleted" x="3052" y="12"/>
+</item>
+<item historyLabel="MicronDetector.java" index="1">
+<position info="not_deleted" x="10020" y="9"/>
+</item>
+<item historyLabel="DetectorFrame.java" index="2">
+<position info="not_deleted" x="1172" y="7"/>
+</item>
+<item historyLabel="EngeSABRE_Simulation.java" index="4">
+<position info="not_deleted" x="67" y="0"/>
+</item>
+<item historyLabel="EngeSABRE_Simulation.java" index="4">
+<position info="not_deleted" x="13917" y="8"/>
+</item>
+<item historyLabel="DataSet.java" index="3">
+<position info="not_deleted" x="2410" y="0"/>
+</item>
+<item historyLabel="EngeSABRE_Simulation.java" index="4">
+<position info="not_deleted" x="13903" y="0"/>
+</item>
+<item historyLabel="MicronDetector.java" index="1">
+<position info="not_deleted" x="4253" y="11"/>
+</item>
+<item historyLabel="Direction.java" index="0">
+<position info="not_deleted" x="5163" y="9"/>
+</item>
+<item historyLabel="DetectorFrame.java" index="2">
+<position info="not_deleted" x="4453" y="0"/>
+</item>
+<item historyLabel="Direction.java" index="0">
+<position info="not_deleted" x="5163" y="9"/>
+</item>
+<item historyLabel="MicronDetector.java" index="1">
+<position info="not_deleted" x="4253" y="11"/>
+</item>
+<item historyLabel="Direction.java" index="0">
+<position info="not_deleted" x="1562" y="0"/>
+</item>
+<item historyLabel="MicronDetector.java" index="1">
+<position info="not_deleted" x="4955" y="21"/>
+</item>
+<item historyLabel="Direction.java" index="0">
+<position info="not_deleted" x="1562" y="0"/>
+</item>
+<item historyLabel="DetectorFrame.java" index="2">
+<position info="not_deleted" x="4453" y="0"/>
+</item>
+<item historyLabel="EngeSABRE_Simulation.java" index="4">
+<position info="not_deleted" x="3691" y="0"/>
+</item>
+<item historyLabel="DetectorFrame.java" index="2">
+<position info="not_deleted" x="4472" y="0"/>
+</item>
+<item historyLabel="Direction.java" index="0">
+<position info="not_deleted" x="1562" y="0"/>
+</item>
+<item historyLabel="MicronDetector.java" index="1">
+<position info="not_deleted" x="7394" y="0"/>
+</item>
+<item historyLabel="EngeSABRE_Simulation.java" index="4">
+<position info="not_deleted" x="3832" y="0"/>
+</item>
+<item historyLabel="MicronDetector.java" index="1">
+<position info="not_deleted" x="7394" y="0"/>
+</item>
+<item historyLabel="EngeSABRE_Simulation.java" index="4">
+<position info="not_deleted" x="627" y="3"/>
+</item>
+<item historyLabel="DetectorFrame.java" index="2">
+<position info="not_deleted" x="4472" y="0"/>
+</item>
+<item historyLabel="Direction.java" index="0">
+<position info="not_deleted" x="1562" y="0"/>
+</item>
+<item historyLabel="MicronDetector.java" index="1">
+<position info="not_deleted" x="7395" y="0"/>
+</item>
+<item historyLabel="EngeSABRE_Simulation.java" index="4">
+<position info="not_deleted" x="7646" y="0"/>
+</item>
+<item historyLabel="MicronDetector.java" index="1">
+<position info="not_deleted" x="3965" y="7"/>
+</item>
+<item historyLabel="Direction.java" index="0">
+<position info="not_deleted" x="10416" y="7"/>
+</item>
+<item historyLabel="RandomNumbers.java" index="5">
+<position info="not_deleted" x="2593" y="7"/>
+</item>
+<item historyLabel="MicronDetector.java" index="1">
+<position info="not_deleted" x="3951" y="7"/>
+</item>
+<item historyLabel="EngeSABRE_Simulation.java" index="4">
+<position info="not_deleted" x="9071" y="9"/>
+</item>
+<item historyLabel="DataSet.java" index="3">
+<position info="not_deleted" x="2410" y="0"/>
+</item>
+<item historyLabel="Matrix.java" index="6">
+<position info="not_deleted" x="66" y="0"/>
+</item>
+<item historyLabel="Direction.java" index="0">
+<position info="not_deleted" x="10416" y="7"/>
+</item>
+<item historyLabel="MicronDetector.java" index="1">
+<position info="not_deleted" x="3951" y="7"/>
+</item>
+<item historyLabel="EngeSABRE_Simulation.java" index="4">
+<position info="not_deleted" x="9071" y="9"/>
+</item>
+<item historyLabel="EngeSABRE_Simulation.java" index="4">
+<position info="not_deleted" x="10689" y="0"/>
+</item>
+<item historyLabel="DetectorFrame.java" index="7">
+<position info="not_deleted" x="66" y="0"/>
+</item>
+<item historyLabel="DetectorFrame.java" index="7">
+<position info="not_deleted" x="4472" y="0"/>
+</item>
+<item historyLabel="MicronDetector.java" index="8">
+<position info="not_deleted" x="66" y="0"/>
+</item>
+<item historyLabel="MicronDetector.java" index="8">
+<position info="not_deleted" x="3951" y="7"/>
+</item>
+<item historyLabel="EngeSABRE_Simulation.java" index="4">
+<position info="not_deleted" x="2395" y="2"/>
+</item>
+<item historyLabel="DetectorFrame.java" index="7">
+<position info="not_deleted" x="4473" y="2"/>
+</item>
+<item historyLabel="MicronDetector.java" index="8">
+<position info="not_deleted" x="3951" y="7"/>
+</item>
+<item historyLabel="Direction.java" index="9">
+<position info="not_deleted" x="66" y="0"/>
+</item>
+<item historyLabel="Direction.java" index="9">
+<position info="not_deleted" x="1001" y="2"/>
+</item>
+<item historyLabel="DetectorFrame.java" index="7">
+<position info="not_deleted" x="4473" y="2"/>
+</item>
+<item historyLabel="MicronDetector.java" index="8">
+<position info="not_deleted" x="7515" y="7"/>
+</item>
+<item active="true" historyLabel="SplitPoleTAJ_gscint2_CT.java" index="10">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+</navigationHistory>
+<input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
+</page>
+<workbenchWindowAdvisor/>
+<actionBarAdvisor/>
+<trimLayout>
+<trimArea IMemento.internal.id="128">
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
+</trimArea>
+<trimArea IMemento.internal.id="1024">
+<trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
+<trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
+</trimArea>
+</trimLayout>
+</window>
+<mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SplitPoleTAJ_gscint2_CT.java" tooltip="Sort Routines/sort/newVME/SplitPoleTAJ_gscint2_CT.java">
+<persistable path="/Sort Routines/sort/newVME/SplitPoleTAJ_gscint2_CT.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RandomNumbers.java" tooltip="Astro Code SABRE/dwvisser/monte/RandomNumbers.java">
+<persistable path="/Astro Code SABRE/dwvisser/monte/RandomNumbers.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DataSet.java" tooltip="Astro Code SABRE/dwvisser/monte/DataSet.java">
+<persistable path="/Astro Code SABRE/dwvisser/monte/DataSet.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Matrix.java" tooltip="Astro Code/dwvisser/math/Matrix.java">
+<persistable path="/Astro Code/dwvisser/math/Matrix.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DataSet.java" tooltip="Astro Code/dwvisser/monte/DataSet.java">
+<persistable path="/Astro Code/dwvisser/monte/DataSet.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MicronDetector.java" tooltip="Astro Code/dwvisser/monte/MicronDetector.java">
+<persistable path="/Astro Code/dwvisser/monte/MicronDetector.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RandomNumbers.java" tooltip="Astro Code/dwvisser/monte/RandomNumbers.java">
+<persistable path="/Astro Code/dwvisser/monte/RandomNumbers.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DetectorFrame.java" tooltip="Astro Code/dwvisser/monte/DetectorFrame.java">
+<persistable path="/Astro Code/dwvisser/monte/DetectorFrame.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MicronDetector.java" tooltip="Astro Code SABRE/dwvisser/monte/MicronDetector.java">
+<persistable path="/Astro Code SABRE/dwvisser/monte/MicronDetector.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Direction.java" tooltip="Astro Code SABRE/dwvisser/monte/Direction.java">
+<persistable path="/Astro Code SABRE/dwvisser/monte/Direction.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DetectorFrame.java" tooltip="Astro Code SABRE/dwvisser/monte/DetectorFrame.java">
+<persistable path="/Astro Code SABRE/dwvisser/monte/DetectorFrame.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="EngeSABRE_Simulation.java" tooltip="Astro Code SABRE/dwvisser/monte/EngeSABRE_Simulation.java">
+<persistable path="/Astro Code SABRE/dwvisser/monte/EngeSABRE_Simulation.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="EngePlusSilicon_Simulation.java" tooltip="Astro Code/dwvisser/monte/EngePlusSilicon_Simulation.java">
+<persistable path="/Astro Code/dwvisser/monte/EngePlusSilicon_Simulation.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Direction.java" tooltip="Astro Code/dwvisser/monte/Direction.java">
+<persistable path="/Astro Code/dwvisser/monte/Direction.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="EngeYLSA_Simulation.java" tooltip="Astro Code/dwvisser/monte/EngeYLSA_Simulation.java">
+<persistable path="/Astro Code/dwvisser/monte/EngeYLSA_Simulation.java"/>
+</file>
+</mruList>
+</workbench>

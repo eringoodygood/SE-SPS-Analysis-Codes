@@ -1,0 +1,96 @@
+
+An unexpected exception has been detected in native code outside the VM.
+Unexpected Signal : EXCEPTION_ACCESS_VIOLATION (0xc0000005) occurred at PC=0x773E109C
+Function=DPA_EnumCallback+0x1A
+Library=C:\WINDOWS\WinSxS\x86_Microsoft.Windows.Common-Controls_6595b64144ccf1df_6.0.2600.2982_x-ww_ac3f9c03\comctl32.dll
+
+Current Java thread:
+	at sun.awt.shell.Win32ShellFolder2.getEnumObjects(Native Method)
+	at sun.awt.shell.Win32ShellFolder2.getEnumObjects(Unknown Source)
+	at sun.awt.shell.Win32ShellFolder2.listFiles(Unknown Source)
+	at javax.swing.filechooser.FileSystemView.getFiles(Unknown Source)
+	at javax.swing.plaf.basic.BasicDirectoryModel$LoadFilesThread.run(Unknown Source)
+
+Dynamic libraries:
+0x00400000 - 0x00407000 	C:\Program Files\Java\j2re1.4.2_03\bin\javaw.exe
+0x7C900000 - 0x7C9B0000 	C:\WINDOWS\system32\ntdll.dll
+0x7C800000 - 0x7C8F4000 	C:\WINDOWS\system32\kernel32.dll
+0x77DD0000 - 0x77E6B000 	C:\WINDOWS\system32\ADVAPI32.dll
+0x77E70000 - 0x77F01000 	C:\WINDOWS\system32\RPCRT4.dll
+0x77D40000 - 0x77DD0000 	C:\WINDOWS\system32\USER32.dll
+0x77F10000 - 0x77F57000 	C:\WINDOWS\system32\GDI32.dll
+0x77C10000 - 0x77C68000 	C:\WINDOWS\system32\MSVCRT.dll
+0x08000000 - 0x08138000 	C:\Program Files\Java\j2re1.4.2_03\bin\client\jvm.dll
+0x76B40000 - 0x76B6D000 	C:\WINDOWS\system32\WINMM.dll
+0x10000000 - 0x10007000 	C:\Program Files\Java\j2re1.4.2_03\bin\hpi.dll
+0x00830000 - 0x0083E000 	C:\Program Files\Java\j2re1.4.2_03\bin\verify.dll
+0x00840000 - 0x00859000 	C:\Program Files\Java\j2re1.4.2_03\bin\java.dll
+0x00860000 - 0x0086D000 	C:\Program Files\Java\j2re1.4.2_03\bin\zip.dll
+0x02C50000 - 0x02D5F000 	C:\Program Files\Java\j2re1.4.2_03\bin\awt.dll
+0x73000000 - 0x73026000 	C:\WINDOWS\system32\WINSPOOL.DRV
+0x76390000 - 0x763AD000 	C:\WINDOWS\system32\IMM32.dll
+0x774E0000 - 0x7761D000 	C:\WINDOWS\system32\ole32.dll
+0x5AD70000 - 0x5ADA8000 	C:\WINDOWS\system32\uxtheme.dll
+0x02DC0000 - 0x02E10000 	C:\Program Files\Java\j2re1.4.2_03\bin\fontmanager.dll
+0x73760000 - 0x737A9000 	C:\WINDOWS\system32\ddraw.dll
+0x73BC0000 - 0x73BC6000 	C:\WINDOWS\system32\DCIMAN32.dll
+0x73940000 - 0x73A10000 	C:\WINDOWS\system32\D3DIM700.DLL
+0x050A0000 - 0x050B7000 	C:\PROGRA~1\McAfee\SPAMKI~1\mskoeplg.dll
+0x77120000 - 0x771AC000 	C:\WINDOWS\system32\OLEAUT32.dll
+0x77C00000 - 0x77C08000 	C:\WINDOWS\system32\VERSION.dll
+0x5D090000 - 0x5D12A000 	C:\WINDOWS\system32\COMCTL32.dll
+0x671E0000 - 0x671ED000 	C:\Program Files\Support.com\bin\sdchook.dll
+0x05280000 - 0x0567F000 	C:\WINDOWS\resources\Themes\luna\luna.msstyles
+0x05700000 - 0x05719000 	c:\progra~1\mcafee.com\vso\McVSSkt.dll
+0x71AB0000 - 0x71AC7000 	C:\WINDOWS\system32\WS2_32.dll
+0x71AA0000 - 0x71AA8000 	C:\WINDOWS\system32\WS2HELP.dll
+0x763B0000 - 0x763F9000 	C:\WINDOWS\system32\COMDLG32.DLL
+0x77F60000 - 0x77FD6000 	C:\WINDOWS\system32\SHLWAPI.dll
+0x7C9C0000 - 0x7D1D5000 	C:\WINDOWS\system32\SHELL32.dll
+0x773D0000 - 0x774D3000 	C:\WINDOWS\WinSxS\x86_Microsoft.Windows.Common-Controls_6595b64144ccf1df_6.0.2600.2982_x-ww_ac3f9c03\comctl32.dll
+0x68D00000 - 0x68D29000 	C:\WINDOWS\System32\spool\DRIVERS\W32X86\3\FXSUI.DLL
+0x71550000 - 0x7156F000 	C:\WINDOWS\system32\ACLUI.dll
+0x5B860000 - 0x5B8B4000 	C:\WINDOWS\system32\NETAPI32.dll
+0x5A980000 - 0x5A9F2000 	C:\WINDOWS\System32\spool\DRIVERS\W32X86\3\FXSAPI.dll
+0x68EB0000 - 0x68EB6000 	C:\WINDOWS\System32\spool\DRIVERS\W32X86\3\FXSRES.dll
+0x5A8B0000 - 0x5A8E2000 	C:\WINDOWS\System32\spool\DRIVERS\W32X86\3\FXSWZRD.dll
+0x76080000 - 0x760E5000 	C:\WINDOWS\system32\MSVCP60.dll
+0x76EB0000 - 0x76EDF000 	C:\WINDOWS\system32\TAPI32.dll
+0x76E80000 - 0x76E8E000 	C:\WINDOWS\system32\rtutils.dll
+0x68D30000 - 0x68D94000 	C:\WINDOWS\System32\spool\DRIVERS\W32X86\3\FXSTIFF.dll
+0x68F40000 - 0x68F4A000 	C:\WINDOWS\System32\spool\DRIVERS\W32X86\3\FXSDRV.DLL
+0x71B20000 - 0x71B32000 	C:\WINDOWS\system32\MPR.dll
+0x75F60000 - 0x75F67000 	C:\WINDOWS\System32\drprov.dll
+0x71C10000 - 0x71C1E000 	C:\WINDOWS\System32\ntlanman.dll
+0x71CD0000 - 0x71CE7000 	C:\WINDOWS\System32\NETUI0.dll
+0x71C90000 - 0x71CD0000 	C:\WINDOWS\System32\NETUI1.dll
+0x71C80000 - 0x71C87000 	C:\WINDOWS\System32\NETRAP.dll
+0x71BF0000 - 0x71C03000 	C:\WINDOWS\System32\SAMLIB.dll
+0x75F70000 - 0x75F79000 	C:\WINDOWS\System32\davclnt.dll
+0x77920000 - 0x77A13000 	C:\WINDOWS\system32\SETUPAPI.dll
+0x77B40000 - 0x77B62000 	C:\WINDOWS\system32\appHelp.dll
+0x76FD0000 - 0x7704F000 	C:\WINDOWS\system32\CLBCATQ.DLL
+0x77050000 - 0x77115000 	C:\WINDOWS\system32\COMRes.dll
+0x769C0000 - 0x76A73000 	C:\WINDOWS\system32\USERENV.dll
+0x76C90000 - 0x76CB8000 	C:\WINDOWS\system32\imagehlp.dll
+0x59A60000 - 0x59B01000 	C:\WINDOWS\system32\DBGHELP.dll
+0x76BF0000 - 0x76BFB000 	C:\WINDOWS\system32\PSAPI.DLL
+
+Heap at VM Abort:
+Heap
+ def new generation   total 4160K, used 1120K [0x10010000, 0x10490000, 0x104f0000)
+  eden space 3712K,  23% used [0x10010000, 0x100e6c48, 0x103b0000)
+  from space 448K,  58% used [0x103b0000, 0x103f1448, 0x10420000)
+  to   space 448K,   0% used [0x10420000, 0x10420000, 0x10490000)
+ tenured generation   total 55060K, used 30830K [0x104f0000, 0x13ab5000, 0x14010000)
+   the space 55060K,  55% used [0x104f0000, 0x1230baf0, 0x1230bc00, 0x13ab5000)
+ compacting perm gen  total 11520K, used 11451K [0x14010000, 0x14b50000, 0x18010000)
+   the space 11520K,  99% used [0x14010000, 0x14b3ecb8, 0x14b3ee00, 0x14b50000)
+
+Local Time = Thu Oct 19 04:12:48 2006
+Elapsed Time = 11635
+#
+# The exception above was detected in native code outside the VM
+#
+# Java VM: Java HotSpot(TM) Client VM (1.4.2_03-b02 mixed mode)
+#
